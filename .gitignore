@@ -1,0 +1,4 @@
+data/db_dump
+data/*.sqlite
+data/updater/src/*.o
+data/updater/updater
