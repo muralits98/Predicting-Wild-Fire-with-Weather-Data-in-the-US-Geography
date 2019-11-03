@@ -1,4 +1,5 @@
 data/db_dump
+data/weather
 data/*.sqlite
 data/updater/src/*.o
 data/updater/updater
