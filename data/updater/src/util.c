@@ -22,7 +22,7 @@ const char* update = "UPDATE %sFire "
                      "HM >= %s AND HM <= %s";
 
 static int handle_fire(void* args, int ncol, char** data, char** fields) {
-    char buf[1000];
+    static char buf[1000];
     snprintf(buf, 1000, update, (char*)args, 1, data[19], data[21], data[26],
              data[22], data[27]);
     puts(buf);
@@ -32,7 +32,7 @@ static int handle_fire(void* args, int ncol, char** data, char** fields) {
 }
 
 int handle_city(void* args, int ncol, char** data, char** fields) {
-    char buf[1000];
+    static char buf[1000];
     for (int i = 0; i < ncol; i++) {
         printf("%s ", data[i]);
     }

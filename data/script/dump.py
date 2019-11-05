@@ -13,6 +13,8 @@ for j, i in enumerate(names):
         print(i[0])
         c.execute(f"select * from {i[0]}")
         with open(f"../db_dump/{i[0]}.csv", "w") as fout:
+            fout.write(",".join([i[0] for i in c.description]))
+            fout.write("\n")
             l = c.fetchone()
             while l:
                 fout.write(",".join(map(str, l)))

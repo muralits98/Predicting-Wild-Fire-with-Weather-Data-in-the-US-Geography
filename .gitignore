@@ -3,3 +3,7 @@ data/weather
 data/*.sqlite
 data/updater/src/*.o
 data/updater/updater
+data/dumper/src/*.o
+data/dumper/dumper
+data/combiner/src/*.o
+data/combiner/combiner
