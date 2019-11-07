@@ -42,11 +42,14 @@
                 <button onclick="next()">Next</button>
                 <button onclick="previous()">Previous</button>
                 <button onclick="reset()">Reset</button>
+                <input type="number" style="width: 8ch" id="inp"></input>
+                <button onclick="move()">Go</button>
             </div>
             <div id="time"></div>
             <div id="map">
                 <svg id="main" width=800 height=984>
-                    <image x=0 y=0 href="res/map.jpg" width=800 height=984>
+                    <image x=0 y=0 href="res/map.jpg" width=800 height=984
+                     opacity="0.5">
                     </image>
                 </svg>
             </div>

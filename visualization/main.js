@@ -149,6 +149,7 @@ let cities = [
 
 let ind = 0;
 let time = null;
+let inp = null;
 let max_ind = 28440;
 let timer = null;
 
@@ -160,15 +161,16 @@ window.onload = () => {
         .text("Time")
         .append("td")
         .text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`);
-    let j = 0
+    inp = d3.select("#inp").attr("value", ind);
+    let j = 0;
     for (let i of cities) {
         i.img = d3.select("#main")
             .append("image")
             .attr("href", "res/fire.png")
             .attr("x", i.x)
             .attr("y", i.y)
-            .attr("width", 20)
-            .attr("height", 20)
+            .attr("width", 25)
+            .attr("height", 25)
             .style("visibility", i.data[ind].Fire ? "visible" : "hidden");
         let tab = d3.select("#info")
             .append("table")
@@ -227,6 +229,7 @@ function main() {
 function next() {
     if (ind >= max_ind) return;
     ind++;
+    inp.attr("value", ind);
     time.text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`)
     for (let i of cities) {
         i.img.style("visibility", i.data[ind].Fire ? "visible" : "hidden");
@@ -239,6 +242,7 @@ function next() {
 function previous() {
     if (ind < 0) return;
     ind--;
+    inp.attr("value", ind);
     time.text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`)
     for (let i of cities) {
         i.img.style("visibility", i.data[ind].Fire ? "visible" : "hidden");
@@ -250,6 +254,7 @@ function previous() {
 
 function reset() {
     ind = 0;
+    inp.attr("value", ind);
     time.text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`)
     for (let i of cities) {
         i.img.style("visibility", i.data[ind].Fire ? "visible" : "hidden");
@@ -262,5 +267,22 @@ function reset() {
 function stop() {
     if (timer) {
         clearInterval(timer);
+    }
+}
+
+function move() {
+    let val = parseInt(document.getElementById("inp").value);
+    if (val >= 0 && val <= max_ind) {
+        ind = val;
+        inp.text(ind);
+        time.text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`)
+        for (let i of cities) {
+            i.img.style("visibility", i.data[ind].Fire ? "visible" : "hidden");
+            for (let j in i.table) {
+                i.table[j].text(i.data[ind][j])
+            }
+        }
+    } else {
+        alert(`Invalid! Must be between 0 and ${max_ind}`);
     }
 }

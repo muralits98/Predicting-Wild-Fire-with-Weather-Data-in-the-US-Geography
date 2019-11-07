@@ -14,6 +14,7 @@ SELECT
 FROM
     {}Fire
 WHERE
+    Year < 2016 AND
     Humidity IS NOT NULL AND
     Pressure IS NOT NULL AND
     Temperature IS NOT NULL AND
@@ -22,6 +23,13 @@ WHERE
     WindSpeed IS NOT NULL   
 '''
 
+latex_template = '''
+\\begin{table}[H]
+    \caption\{{}\}
+    \centering
+    \\begin{tabular}{|r|r|r|r|r|}
+\\end{table}
+'''
 engine = sqlalchemy.create_engine("sqlite:///../../data/data.sqlite")
 connection = engine.connect()
 cities = pandas.read_sql_query("SELECT Name FROM Cities", connection)
@@ -37,9 +45,8 @@ with open("res.csv", "w") as fout:
         X = numpy.concatenate((numpy.array(data.iloc[:, [0, 1, 2, 4, 5]]),
                                one_hot), axis = 1)
         y = numpy.array(data["Fire"])
-        X_sel, X_hof, y_sel, y_hof =\
-        sklearn.model_selection.train_test_split(X,
-        y, test_size = 0.2)
+        ind_1 = y == 1
+        '''
         max_score = 0
         par = 0
         est_type = "xgboost.XGBClassifier"
@@ -95,5 +102,6 @@ with open("res.csv", "w") as fout:
         print(cities.iloc[i, 0], est_type, par, test_score)
         fout.write(f"{cities.iloc[i, 0]},{est_type},{par},{test_score},")
         fout.write(f"{y_hof.shape[0]}\n")
+        '''
 connection.close()
 
