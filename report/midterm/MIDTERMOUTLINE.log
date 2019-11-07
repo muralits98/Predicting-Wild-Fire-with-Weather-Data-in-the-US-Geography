@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.7)  7 NOV 2019 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.7)  7 NOV 2019 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -316,29 +316,30 @@ File: sanfrancisco_hour.png Graphic file (type png)
 <use sanfrancisco_hour.png>
 Package pdftex.def Info: sanfrancisco_hour.png  used on input line 134.
 (pdftex.def)             Requested size: 190.24818pt x 134.66043pt.
- (../../analysis/yi/tex/SanFrancisco.tex)
-(../../analysis/yi/tex/Atlanta.tex [2 <./image.png> <./image1.png> <../../visua
-lization/screenshot.png> <./sanfrancisco_hour.png>])
+ [2 <./image.png> <./image1.png> <../../visualization/screenshot.png> <./sanfra
+ncisco_hour.png>] (../../analysis/yi/tex/SanFrancisco.tex) (../../analysis/yi/t
+ex/Atlanta.tex)
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 155.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
+put line 170.
  [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
  (./MIDTERMOUTLINE.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `MIDTERMOUTLINE.out' has not changed.
 (rerunfilecheck)             Checksum: C6FBF77211E4EE6B1FE7A3D34543D329;420.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 6504 strings out of 494477
- 99944 string characters out of 6175715
+ 6505 strings out of 494477
+ 99950 string characters out of 6175715
  191304 words of memory out of 5000000
  10107 multiletter control sequences out of 15000+600000
  9500 words of font info for 33 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 42i,9n,40p,269b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,40p,269b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -349,10 +350,10 @@ pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti9.pfb>
-Output written on MIDTERMOUTLINE.pdf (3 pages, 2345598 bytes).
+Output written on MIDTERMOUTLINE.pdf (4 pages, 2347351 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
+ 122 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 25 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

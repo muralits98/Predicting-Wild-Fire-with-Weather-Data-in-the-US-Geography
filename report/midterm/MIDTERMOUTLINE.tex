@@ -101,10 +101,10 @@ positive samples or in some sense almost equal number of positive and negative
 examples. Figure 1(a) and Figure 1(b) show the number of negative examples
 needed to ensure tradeoff between precision and recall. Also, we know that
 California is burning at the moment, Figure 1(d) shows the distribution of
-number of fires in the SF city grouped by hour where fires where actually
-reported. If you want to look at fires in the cities we are covering,
-Figure 1(d) shows a screen shot of one instant of time. The animation showing
-fires over time is hosted on \textit{Github}.
+number of fires in all cities we have data for grouped by hour where fires
+where actually reported. If you want to look at fires in the cities we are
+covering, Figure 1(c) shows a screen shot of one instant of time. The animation
+showing fires over time is hosted on \textit{Github}.
 \textit{Follow this
 \href{https://leafyao8621.github.io/firevisualization.github.io/}{link}
 and please allow for sometime for the website to load}.\par
@@ -131,21 +131,36 @@ and please allow for sometime for the website to load}.\par
     \begin{subfigure}[t]{0.45\textwidth}
         \caption{}
         \centering
-        \includegraphics[width=0.9\textwidth]{sanfrancisco_hour.png}
+        \includegraphics[width=0.9\textwidth]{Allfire.pdf}
     \end{subfigure}
 \end{figure}
 
 \section{Data Analysis}
 
+Our goal is to construct city-specific models to predict fire with weather
+data. First of all, we randomly sampled 20\% of the data points from a
+particular city with value 1 for the Fire variable, and sampled the same
+\textbf{number} of data points from that city with value 0 for the Fire
+variable to form a \textbf{balanced} test set. The models were then trained 
+on the remaining data points where we again constructed a \textbf{balanced}
+data set by combining the ramining data points with 1 for fire and a
+sample with the same \textbf{number} of data points from the
+remaining data points with 0 for Fire. Meta parameters were selected by
+comparing 5-fold cross-validtion score on the training data set.\par
+
 We decided to use two ensemble learning models, namely XGBoost and
 Random Forest, as well as a linear model, namely Soft-Margin SVM with the RBF
 (Radial Basis Function) kernel. On top of
 this, we also ventured using automl framework TPOT. The following table
-summarises the results for two cities. \par
-XGBoost works the best because of the following reasons:
+summarises the results for two cities.\par
 
 \input{../../analysis/yi/tex/SanFrancisco.tex}
 \input{../../analysis/yi/tex/Atlanta.tex}
+
+From the summaries, we discovered that the models perform similarly on training
+and testing data sets which indicates that we might have alleviated
+overfitting, but the accuracy scores themselves are not high. Our next step
+will be improving accuracy scores while avoiding overfitting.\par
 
 \section{Work for the upcoming term}
 \subsection{Bootstrapping}
