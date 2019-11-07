@@ -184,7 +184,7 @@ with open("log.csv", "w") as log:
         print(f"{cities.iloc[i, 0]} SVC {test_score}")
         test_score_svc = test_score
         with open(f"tex/{cities.iloc[i, 0]}.tex", "w") as fout:
-            fout.write(latex_template.format(par_xgb, cities.iloc[i, 0],
+            fout.write(latex_template.format(cities.iloc[i, 0], par_xgb,
                 max_score_xgb, test_score_xgb, par_rf,
                 max_score_rf, test_score_rf, par_svc,
                 max_score_svc, test_score_svc))
