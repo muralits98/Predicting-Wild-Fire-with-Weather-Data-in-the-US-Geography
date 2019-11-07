@@ -1,15 +1,15 @@
-\documentclass{article}
+\documentclass[10pt]{article}
 \usepackage{graphicx}
 \usepackage{algorithm}
 \usepackage{hyperref}
 
 \usepackage{algorithmic}
 % \usepackage{gensymb}
-% \usepackage{fullpage}
+\usepackage{fullpage}
 \usepackage{float}
 \usepackage{subcaption}
 
-% \parskip 0.05in
+\parskip 0.05in
 \begin{document}
 \title{\bf Can we predict fire with weather data?}
 \author{Harsh (hp444), Yi Yao (yy899), Murali (mt788)}
@@ -97,80 +97,65 @@ In San Fransisco, the number of fires in the set was 1260 and the number of
 no-fires is roughly 43 thousand. This would cause issues with overfitting.
 Using the precision and recall metrics, we actually find that the number of
 data points where the tradeoff occurs is with 1400 negative examples with 1400
-positive samples.\par
+positive samples or in some sense almost equal number of positive and negative
+examples. Figure 1(a) and Figure 1(b) show the number of negative examples
+needed to ensure tradeoff between precision and recall. Also, we know that
+California is burning at the moment, Figure 1(d) shows the distribution of
+number of fires in the SF city grouped by hour where fires where actually
+reported. If you want to look at fires in the cities we are covering,
+Figure 1(d) shows a screen shot of one instant of time. The animation showing
+fires over time is hosted on \textit{Github}.
+\textit{Follow this
+\href{https://leafyao8621.github.io/firevisualization.github.io/}{link}
+and please allow for sometime for the website to load}.\par
 
 \begin{figure}[H]
+    \caption{}
     \centering
     \begin{subfigure}[t]{0.45\textwidth}
+        \caption{}
+        \centering
         \includegraphics[width=0.9\textwidth]{image.png}
     \end{subfigure}
     \begin{subfigure}[t]{0.45\textwidth}
+        \caption{}
+        \centering
         \includegraphics[width=0.9\textwidth]{image1.png}
     \end{subfigure}
     \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=0.9\textwidth]
+        \caption{}
+        \centering
+        \includegraphics[width=0.5\textwidth]
         {../../visualization/screenshot.png}
     \end{subfigure}
     \begin{subfigure}[t]{0.45\textwidth}
+        \caption{}
+        \centering
         \includegraphics[width=0.9\textwidth]{sanfrancisco_hour.png}
     \end{subfigure}
 \end{figure}
 
 \section{Data Analysis}
 
-We decided to use two classification models namely SVM and XGBoost. On top of
+We decided to use two ensemble learning models, namely XGBoost and
+Random Forest, as well as a linear model, namely Soft-Margin SVM with the RBF
+(Radial Basis Function) kernel. On top of
 this, we also ventured using automl framework TPOT. The following table
 summarises the results for two cities. \par
 XGBoost works the best because of the following reasons:
-\begin{table}[H]
-    \caption{Albuquerque}
-    \centering
-    \begin{tabular}{|r|r|r|r|}
-        \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
-        \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
-        \hline
-        XGBClassifier &46 &0.6613 &0.6467\\
-        \hline
-        RandomForestClassifier &56 &0.6936 &0.7045\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.5509 &0.5114\\
-        \hline
-    \end{tabular}
-\end{table}
-\begin{table}[H]
-    \caption{Atlanta}
-    \centering
-    \begin{tabular}{|r|r|r|r|}
-        \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
-        \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
-        \hline
-        XGBClassifier &59 &0.7093 &0.7034\\
-        \hline
-        RandomForestClassifier &75 &0.7252 &0.7422\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.6535 &0.6697\\
-        \hline
-    \end{tabular}
-\end{table}
+
+\input{../../analysis/yi/tex/SanFrancisco.tex}
+\input{../../analysis/yi/tex/Atlanta.tex}
+
 \section{Work for the upcoming term}
-\textbf{Bootstrapping} \\
+\subsection{Bootstrapping}
 To avoid overfitting problem, we may try out the following pseudocode hoping to
 solve the problem:
 \begin{algorithm}
     \caption{Avoid Overfit using our version of Bootstrap}
     \begin{algorithmic}[lt]
 
-        \STATE DPos $\leftarrow$ Positive data and DNeg $\leftarrow$ Negative
+        \STATE DPos $\gets$ Positive data and DNeg $\gets$ Negative
         data
         \FOR{Number of Iterations}
         \STATE Sample negative data in equal proportion to available positive
@@ -185,7 +170,7 @@ solve the problem:
     \end{algorithmic}
 \end{algorithm}
 
-\textbf{Feature Engineering} \\
+\subsection{Feature Engineering}
 Feature Engineering plays a key role in cases like ours where our data is very
 restrictive within certain ranges. We plan to use different feature
 transformations like exponentials, logarithms. Apart from this, we may also
