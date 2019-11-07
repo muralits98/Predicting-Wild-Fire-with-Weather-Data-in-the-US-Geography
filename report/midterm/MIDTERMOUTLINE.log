@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.7)  7 NOV 2019 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.7)  7 NOV 2019 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -295,54 +295,47 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<image.png, id=45, 433.62pt x 289.08pt>
+<image.png, id=46, 433.62pt x 289.08pt>
 File: image.png Graphic file (type png)
 <use image.png>
-Package pdftex.def Info: image.png  used on input line 118.
+Package pdftex.def Info: image.png  used on input line 119.
 (pdftex.def)             Requested size: 190.24818pt x 126.83388pt.
-<image1.png, id=47, 433.62pt x 289.08pt>
+<image1.png, id=48, 433.62pt x 289.08pt>
 File: image1.png Graphic file (type png)
 <use image1.png>
-Package pdftex.def Info: image1.png  used on input line 123.
+Package pdftex.def Info: image1.png  used on input line 124.
 (pdftex.def)             Requested size: 190.24818pt x 126.83388pt.
-<../../visualization/screenshot.png, id=48, 1438.6247pt x 1571.11969pt>
+<../../visualization/screenshot.png, id=49, 1438.6247pt x 1571.11969pt>
 File: ../../visualization/screenshot.png Graphic file (type png)
 <use ../../visualization/screenshot.png>
 Package pdftex.def Info: ../../visualization/screenshot.png  used on input line
- 129.
+ 130.
 (pdftex.def)             Requested size: 105.69415pt x 115.40758pt.
-<Allfire.pdf, id=49, 433.62pt x 289.08pt>
+<Allfire.pdf, id=50, 433.62pt x 289.08pt>
 File: Allfire.pdf Graphic file (type pdf)
 <use Allfire.pdf>
-Package pdftex.def Info: Allfire.pdf  used on input line 134.
+Package pdftex.def Info: Allfire.pdf  used on input line 135.
 (pdftex.def)             Requested size: 190.24818pt x 126.83388pt.
  [2 <./image.png> <./image1.png> <../../visualization/screenshot.png> <./Allfir
 e.pdf>] (../../analysis/yi/tex/SanFrancisco.tex)
 (../../analysis/yi/tex/Atlanta.tex)
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 170.
+put line 171.
  [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
  (./MIDTERMOUTLINE.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
-
-
-Package rerunfilecheck Warning: File `MIDTERMOUTLINE.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `MIDTERMOUTLINE.out':
-(rerunfilecheck)             Before: C6FBF77211E4EE6B1FE7A3D34543D329;420
-(rerunfilecheck)             After:  483AE04A6AC8E5F0D6AC1F62BD9E69AD;401.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package rerunfilecheck Info: File `MIDTERMOUTLINE.out' has not changed.
+(rerunfilecheck)             Checksum: 483AE04A6AC8E5F0D6AC1F62BD9E69AD;401.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
  6505 strings out of 494477
  99924 string characters out of 6175715
- 191304 words of memory out of 5000000
+ 192304 words of memory out of 5000000
  10107 multiletter control sequences out of 15000+600000
  9500 words of font info for 33 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -357,10 +350,10 @@ pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti9.pfb>
-Output written on MIDTERMOUTLINE.pdf (4 pages, 2331292 bytes).
+Output written on MIDTERMOUTLINE.pdf (4 pages, 2331464 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 154 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
