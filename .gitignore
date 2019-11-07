@@ -7,3 +7,4 @@ data/dumper/src/*.o
 data/dumper/dumper
 data/combiner/src/*.o
 data/combiner/combiner
+analysis/yi/__pycache__
