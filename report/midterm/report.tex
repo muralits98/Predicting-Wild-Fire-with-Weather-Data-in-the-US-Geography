@@ -164,33 +164,29 @@ overfitting, but the accuracy scores themselves are not high. Our next step
 will be improving accuracy scores while avoiding overfitting.\par
 
 \section{Work for the upcoming term}
-\subsection{Bootstrapping}
-To avoid overfitting problem, we may try out the following pseudocode hoping to
-solve the problem:
-\begin{algorithm}
-    \caption{Avoid Overfit using our version of Bootstrap}
-    \begin{algorithmic}[lt]
-
-        \STATE DPos $\gets$ Positive data and DNeg $\gets$ Negative
-        data
-        \FOR{Number of Iterations}
-        \STATE Sample negative data in equal proportion to available positive
-        data
-        \STATE Fit the data and store the weights
-        \ENDFOR
-        \STATE Average the weights to get an averaged model
-        \STATE Test this model on a new and unseen data for validation
-        \REQUIRE Changing the ratio of sampling in the dataset to average
-        different models
-        \STATE Test this model on a new and unseen data for validation
-    \end{algorithmic}
-\end{algorithm}
-
+\subsection{Avoiding Overfitting}
+To tackle the problem of overfitting, one of the possible solution we
+could think of is listed below:
+\begin{enumerate}
+    \item
+    Create a new balanced data set by:
+    \begin{enumerate}
+        \item
+        taking all the samples which leads to fire
+        \item
+        randomly sample equal number of no-fire samples from the entire
+        dataset of no-fire
+    \end{enumerate}
+    \item
+    Fit a model to the above data set
+    \item
+    Repeat the first 2 steps ``N'' number of times and get the average model
+\end{enumerate}
 \subsection{Feature Engineering}
 Feature Engineering plays a key role in cases like ours where our data is very
 restrictive within certain ranges. We plan to use different feature
 transformations like exponentials, logarithms. Apart from this, we may also
 explore into using different data available online for more feature information
-related to fires and
+related to fires.\par
 
 \end{document}
