@@ -27,6 +27,8 @@ WHERE
 
 latex_template = '''
 \\begin{{table}}[H]
+    \\caption{{{}}}
+    \\centering
     \\begin{{tabular}}{{|r|r|r|r|}}
         \\hline
         Classifier &Meta Parameter &Training Accuracy
