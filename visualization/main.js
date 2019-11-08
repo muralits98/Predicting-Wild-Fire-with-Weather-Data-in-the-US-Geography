@@ -1,147 +1,118 @@
 let cities = [
     {
         name: "Albuquerque",
-        data: Albuquerque,
         x: 200,
         y: 600
     }, {
         name: "Houston",
-        data: Houston,
         x: 330,
         y: 690
     }, {
         name: "Montreal",
-        data: Montreal,
         x: 540,
         y: 460
     }, {
         name: "SanAntonio",
-        data: SanAntonio,
         x: 290,
         y: 680
     }, {
         name: "Atlanta",
-        data: Atlanta,
         x: 450,
         y: 630
     }, {
         name: "Indianapolis",
-        data: Indianapolis,
         x: 460,
         y: 550
     }, {
         name: "Nashville",
-        data: Nashville,
         x: 420,
         y: 600
     }, {
         name: "SanDiego",
-        data: SanDiego,
         x: 100,
         y: 600
     }, {
         name: "Charlotte",
-        data: Charlotte,
         x: 500,
         y: 610
     }, {
         name: "Jacksonville",
-        data: Jacksonville,
         x: 490,
         y: 670
     }, {
         name: "NewYork",
-        data: NewYork,
         x: 550,
         y: 520
     }, {
         name: "SanFrancisco",
-        data: SanFrancisco,
         x: 60,
         y: 510
     }, {
         name: "Chicago",
-        data: Chicago,
         x: 410,
         y: 520
     }, {
         name: "KansasCity",
-        data: KansasCity,
         x: 350,
         y: 560
     }, {
         name: "Philadelphia",
-        data: Philadelphia,
         x: 540,
         y: 540
     }, {
         name: "Seattle",
-        data: Seattle,
         x: 100,
         y: 385
     }, {
         name: "Dallas",
-        data: Dallas,
         x: 320,
         y: 640
     }, {
         name: "LasVegas",
-        data: LasVegas,
         x: 120,
         y: 560
     }, {
         name: "Phoenix",
-        data: Phoenix,
         x: 150,
         y: 600
     }, {
         name: "Toronto",
-        data: Toronto,
         x: 490,
         y: 490
     }, {
         name: "Denver",
-        data: Denver,
         x: 230,
         y: 540
     }, {
         name: "LosAngeles",
-        data: LosAngeles,
         x: 90,
         y: 570
     }, {
         name: "Pittsburgh",
-        data: Pittsburgh,
         x: 480,
         y: 540
     }, {
         name: "Vancouver",
-        data: Vancouver,
         x: 110,
         y: 360
     }, {
         name: "Detroit",
-        data: Detroit,
         x: 460,
         y: 520
     }, {
         name: "Miami",
-        data: Miami,
         x: 500,
         y: 730
     }, {
         name: "Portland",
-        data: Portland,
         x: 100,
         y: 410
     }, {
         name: "Minneapolis",
-        data: Minneapolis,
         x: 360,
         y: 480
     }, {
         name: "SaintLouis",
-        data: SaintLouis,
         x: 380,
         y: 570
     }
@@ -154,76 +125,94 @@ let max_ind = 28440;
 let timer = null;
 
 window.onload = () => {
-    time = d3.select("#time")
+    inp = d3.select("#inp").attr("value", ind);
+    con = d3.select("#console");
+    let j = 0;
+    con.text(`Loading, please wait`);
+    let promises = [];
+    for (i of cities) {
+        console.log(`/data/${i.name}Fire.json`);
+        promises.push(d3.json(`/data/${i.name}Fire.json`, (err, data) => {
+            console.log(err);
+        }));
+    }
+    Promise.all(
+        promises
+    ).then((data) => {
+        for (let i = 0; i < data.length; i++) {
+            cities[i].data = data[i];
+            cities[i].img = d3.select("#main")
+                .append("image")
+                .attr("href", "res/fire.png")
+                .attr("x", cities[i].x)
+                .attr("y", cities[i].y)
+                .attr("width", 25)
+                .attr("height", 25)
+                .style("visibility", data[i][ind].Fire ? "visible" : "hidden");
+            let tab = d3.select("#info")
+                .append("table")
+                .style("grid-row-start", i / 2 + 1)
+                .style("grid-row-end", i / 2 + 1)
+                .style("grid-column-start", i % 2 + 1)
+                .style("grid-column-end", i % 2 + 1);
+            tab.append("tr")
+                .append("th")
+                .text(cities[i].name)
+                .append("th");
+            let r = tab.append("tr")
+                .append("td")
+                .text("Temperature")
+            cities[i].table = {}
+            cities[i].table.Temperature = r.append("td")
+                .text(data[i][ind].Temperature);
+            r = tab.append("tr")
+                .append("td")
+                .text("Humidity")
+            cities[i].table.Humidity = r.append("td")
+                .text(data[i][ind].Humidity);
+            r = tab.append("tr")
+                .append("td")
+                .text("Pressure")
+            cities[i].table.Pressure = r.append("td")
+                .text(data[i][ind].Pressure);
+            r = tab.append("tr")
+                .append("td")
+                .text("Weather Description")
+            cities[i].table.WindDescription = r.append("td")
+                .text(data[i][ind].WeatherDescription);
+            r = tab.append("tr")
+                .append("td")
+                .text("Wind Direction")
+            cities[i].table.WindDirection = r.append("td")
+                .text(data[i][ind].WindDirection);
+            r = tab.append("tr")
+                .append("td")
+                .text("Wind Speed")
+            cities[i].table.WindSpeed = r.append("td")
+                .text(data[i][ind].WindSpeed);
+        }
+        time = d3.select("#time")
         .append("table")
         .append("tr")
         .append("td")
         .text("Time")
         .append("td")
         .text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`);
-    inp = d3.select("#inp").attr("value", ind);
-    let j = 0;
-    for (let i of cities) {
-        i.img = d3.select("#main")
-            .append("image")
-            .attr("href", "res/fire.png")
-            .attr("x", i.x)
-            .attr("y", i.y)
-            .attr("width", 25)
-            .attr("height", 25)
-            .style("visibility", i.data[ind].Fire ? "visible" : "hidden");
-        let tab = d3.select("#info")
-            .append("table")
-            .style("grid-row-start", j / 2 + 1)
-            .style("grid-row-end", j / 2 + 1)
-            .style("grid-column-start", j % 2 + 1)
-            .style("grid-column-end", j % 2 + 1);
-        tab.append("tr")
-            .append("th")
-            .text(i.name)
-            .append("th");
-        let r = tab.append("tr")
-            .append("td")
-            .text("Temperature")
-        i.table = {}
-        i.table.Temperature = r.append("td")
-            .text(i.data[ind].Temperature);
-        r = tab.append("tr")
-            .append("td")
-            .text("Humidity")
-        i.table.Humidity = r.append("td")
-            .text(i.data[ind].Humidity);
-        r = tab.append("tr")
-            .append("td")
-            .text("Pressure")
-        i.table.Pressure = r.append("td")
-            .text(i.data[ind].Pressure);
-        r = tab.append("tr")
-            .append("td")
-            .text("Weather Description")
-        i.table.WindDescription = r.append("td")
-            .text(i.data[ind].WeatherDescription);
-        r = tab.append("tr")
-            .append("td")
-            .text("Wind Direction")
-        i.table.WindDirection = r.append("td")
-            .text(i.data[ind].WindDirection);
-        r = tab.append("tr")
-            .append("td")
-            .text("Wind Speed")
-        i.table.WindSpeed = r.append("td")
-            .text(i.data[ind].WindSpeed);
-        j++;
-    }
+        con.text("Ready");
+    });
+    
 };
 
 function main() {
-    timer = setInterval(() => {
-        next();
-        if (ind >= max_ind) {
-            clearInterval(timer);
-        }
-    }, 200)
+    if (!timer) {
+        con.text("Running");
+        timer = setInterval(() => {
+            next();
+            if (ind >= max_ind) {
+                clearInterval(timer);
+            }
+        }, 200);
+    }
 }
 
 function next() {
@@ -266,7 +255,9 @@ function reset() {
 
 function stop() {
     if (timer) {
+        con.text("Ready");
         clearInterval(timer);
+        timer = null;
     }
 }
 

@@ -3,35 +3,6 @@
     <head>
         <link rel="stylesheet" type="text/css" href="main.css">
         <script src="https://d3js.org/d3.v5.min.js"></script>
-        <script src="data/AlbuquerqueFire.js"></script>
-        <script src="data/AtlantaFire.js"></script>
-        <script src="data/CharlotteFire.js"></script>
-        <script src="data/ChicagoFire.js"></script>
-        <script src="data/DallasFire.js"></script>
-        <script src="data/DenverFire.js"></script>
-        <script src="data/DetroitFire.js"></script>
-        <script src="data/HoustonFire.js"></script>
-        <script src="data/IndianapolisFire.js"></script>
-        <script src="data/JacksonvilleFire.js"></script>
-        <script src="data/KansasCityFire.js"></script>
-        <script src="data/LasVegasFire.js"></script>
-        <script src="data/LosAngelesFire.js"></script>
-        <script src="data/MiamiFire.js"></script>
-        <script src="data/MinneapolisFire.js"></script>
-        <script src="data/MontrealFire.js"></script>
-        <script src="data/NashvilleFire.js"></script>
-        <script src="data/NewYorkFire.js"></script>
-        <script src="data/PhiladelphiaFire.js"></script>
-        <script src="data/PhoenixFire.js"></script>
-        <script src="data/PittsburghFire.js"></script>
-        <script src="data/PortlandFire.js"></script>
-        <script src="data/SaintLouisFire.js"></script>
-        <script src="data/SanAntonioFire.js"></script>
-        <script src="data/SanDiegoFire.js"></script>
-        <script src="data/SanFranciscoFire.js"></script>
-        <script src="data/SeattleFire.js"></script>
-        <script src="data/TorontoFire.js"></script>
-        <script src="data/VancouverFire.js"></script>
         <script src="main.js"></script>
     </head>
     <body>
@@ -42,8 +13,11 @@
                 <button onclick="next()">Next</button>
                 <button onclick="previous()">Previous</button>
                 <button onclick="reset()">Reset</button>
-                <input type="number" style="width: 8ch" id="inp"></input>
+                <input type="number" style="width: 5ch"></input>
                 <button onclick="move()">Go</button>
+            </div>
+            <div id="status">
+                <p id="console"></p>
             </div>
             <div id="time"></div>
             <div id="map">
