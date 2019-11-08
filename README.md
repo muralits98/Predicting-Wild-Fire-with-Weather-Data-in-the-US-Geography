@@ -18,3 +18,4 @@
 This is the group Project done by Murali, Harsh, Yi Yao
 
 [Midterm Report](https://github.com/muralits98/Predicting-Wild-Fire-with-Weather-Data-in-the-US-Geography/blob/master/report/midterm/midterm_report.pdf)
+[Data Visualisation](https://leafyao8621.github.io/firevisualization.github.io/)
