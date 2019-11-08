@@ -16,3 +16,5 @@
 2. Predict fire internsities in different areas and understand how the weather affects them. Incase of high intensity fires, it might be required to evacuate the nearby areas.
 
 This is the group Project done by Murali, Harsh, Yi Yao
+
+[Midterm Report](https://github.com/muralits98/Predicting-Wild-Fire-with-Weather-Data-in-the-US-Geography/blob/master/report/midterm/midterm_report.pdf)
