@@ -8,13 +8,13 @@
     <body>
         <div id="dash">
             <div id="control">
-                <button onclick="main()">Begin</button>
-                <button onclick="stop()">Stop</button>
-                <button onclick="next()">Next</button>
-                <button onclick="previous()">Previous</button>
-                <button onclick="reset()">Reset</button>
-                <input type="number" style="width: 5ch"></input>
-                <button onclick="move()">Go</button>
+                <button onclick="main()" disabled>Begin</button>
+                <button onclick="stop()" disabled>Stop</button>
+                <button onclick="next()" disabled>Next</button>
+                <button onclick="previous()" disabled>Previous</button>
+                <button onclick="reset()" disabled>Reset</button>
+                <input type="number" style="width: 7ch" id="inp"></input>
+                <button onclick="move()" disabled>Go</button>
             </div>
             <div id="status">
                 <p id="console"></p>

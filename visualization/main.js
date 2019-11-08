@@ -125,14 +125,10 @@ let max_ind = 28440;
 let timer = null;
 
 window.onload = () => {
-    inp = d3.select("#inp").attr("value", ind);
-    con = d3.select("#console");
-    let j = 0;
-    con.text(`Loading, please wait`);
+    con = d3.select("#console").text("Loading, please wait");
     let promises = [];
     for (i of cities) {
-        console.log(`/data/${i.name}Fire.json`);
-        promises.push(d3.json(`/data/${i.name}Fire.json`, (err, data) => {
+        promises.push(d3.json(`data/${i.name}Fire.json`, (err, data) => {
             console.log(err);
         }));
     }
@@ -191,16 +187,17 @@ window.onload = () => {
             cities[i].table.WindSpeed = r.append("td")
                 .text(data[i][ind].WindSpeed);
         }
+        inp = d3.select("#inp").attr("value", ind);
         time = d3.select("#time")
-        .append("table")
-        .append("tr")
-        .append("td")
-        .text("Time")
-        .append("td")
-        .text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`);
+            .append("table")
+            .append("tr")
+            .append("td")
+            .text("Time")
+            .append("td")
+            .text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`);
         con.text("Ready");
+        d3.selectAll("button").attr("disabled", null);
     });
-    
 };
 
 function main() {
@@ -265,7 +262,6 @@ function move() {
     let val = parseInt(document.getElementById("inp").value);
     if (val >= 0 && val <= max_ind) {
         ind = val;
-        inp.text(ind);
         time.text(`${cities[0].data[ind].Year} ${cities[0].data[ind].DOY} ${cities[0].data[ind].HM}`)
         for (let i of cities) {
             i.img.style("visibility", i.data[ind].Fire ? "visible" : "hidden");
