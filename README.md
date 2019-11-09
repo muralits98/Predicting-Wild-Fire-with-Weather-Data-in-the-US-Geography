@@ -1,4 +1,9 @@
 # Predicting-Wild-Fire-with-Weather-Data-in-the-US-Geography
+This is the group Project done by Murali, Harsh, Yi Yao
+
+[Midterm Report](https://github.com/muralits98/Predicting-Wild-Fire-with-Weather-Data-in-the-US-Geography/blob/master/report/midterm/midterm_report.pdf)
+
+[Data Visualisation](https://leafyao8621.github.io/firevisualization.github.io/)
 
 ## Question: Can we predict wild fires in major states of the US?
 
@@ -14,9 +19,3 @@
 ### Why it is important:
 1. To plan ahead of time for fires and be prepared, this would help save wildlife.
 2. Predict fire internsities in different areas and understand how the weather affects them. Incase of high intensity fires, it might be required to evacuate the nearby areas.
-
-This is the group Project done by Murali, Harsh, Yi Yao
-
-[Midterm Report](https://github.com/muralits98/Predicting-Wild-Fire-with-Weather-Data-in-the-US-Geography/blob/master/report/midterm/midterm_report.pdf)
-
-[Data Visualisation](https://leafyao8621.github.io/firevisualization.github.io/)
