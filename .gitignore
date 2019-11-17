@@ -8,3 +8,4 @@ data/dumper/dumper
 data/combiner/src/*.o
 data/combiner/combiner
 analysis/yi/__pycache__
+analysis/yi/classify_bs/__pycache__
