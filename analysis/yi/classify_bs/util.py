@@ -40,7 +40,6 @@ class RandomForestClassifierBS(sklearn.ensemble.RandomForestClassifier):
                 y_neg, train_size = len(y_pos) + 1)
             X_tr = numpy.concatenate((X_pos, X_neg_cur), axis = 0)
             y_tr = numpy.concatenate((y_pos, y_neg_cur), axis = 0)
-            # print(y_tr)
             est =\
             super().fit(X_tr, y_tr, sample_weight)
             self.estimators.append(est)
@@ -48,7 +47,7 @@ class RandomForestClassifierBS(sklearn.ensemble.RandomForestClassifier):
     def predict(self, X):
         return numpy.mean([
             sklearn.ensemble.RandomForestClassifier.predict(i, X)
-            for i in self.estimators], axis = 0)
+            for i in self.estimators], axis = 0) > 0.5
     def predict_proba(self, X):
         return numpy.mean([
             sklearn.ensemble.RandomForestClassifier.predict_proba(i, X)
@@ -90,7 +89,6 @@ class XGBClassifierBS(xgboost.XGBClassifier):
                 y_neg, train_size = len(y_pos) + 1)
             X_tr = numpy.concatenate((X_pos, X_neg_cur), axis = 0)
             y_tr = numpy.concatenate((y_pos, y_neg_cur), axis = 0)
-            # print(y_tr)
             est =\
             super().fit(X_tr, y_tr, sample_weight)
             self.estimators.append(est)
@@ -98,7 +96,7 @@ class XGBClassifierBS(xgboost.XGBClassifier):
     def predict(self, X):
         return numpy.mean([
             xgboost.XGBClassifier.predict(i, X)
-            for i in self.estimators], axis = 0)
+            for i in self.estimators], axis = 0) > 0.5
     def predict_proba(self, X):
         return numpy.mean([
             xgboost.XGBClassifier.predict_proba(i, X)

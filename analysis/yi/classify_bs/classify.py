@@ -34,7 +34,7 @@ latex_template = '''
         &Training Accuracy
         &Test Accuracy\\\\
         \\hline
-        &n\\_bootstrap &n\\_estimators &\\multicolumn{{2}}{{|r|}}{{}}\\\
+        &n\\_bootstrap &n\\_estimators &\\multicolumn{{2}}{{|r|}}{{}}\\\\
         \\hline
         XGBClassifier &{} &{} &{:.4f} &{:.4f}\\\\
         \\hline
@@ -83,7 +83,7 @@ for i in range(len(cities)):
     y_hof = numpy.concatenate((y_hof_0, y_hof_1), axis = 0)
     max_score_rf = 0
     par_rf = (0, 0)
-    for j in range(1, 21):
+    for j in range(1, 11):
         for k in range(1, 101):
             clf = util.RandomForestClassifierBS(n_bootstrap = j,
                 n_estimators = k)
@@ -94,7 +94,7 @@ for i in range(len(cities)):
                 j, k, score)
             if (score > max_score_rf):
                 par_rf = (j, k)
-                max_score = score
+                max_score_rf = score
     clf = util.RandomForestClassifierBS(n_bootstrap = par_rf[0],
         n_estimators = par_rf[1])
     clf.fit(X_sel, y_sel)
@@ -104,7 +104,7 @@ for i in range(len(cities)):
         f"{cities.iloc[i, 0]} RandomForestClassifierBS {j} {k} {test_score_rf}")
     max_score_xgb = 0
     par_xgb = (0, 0)
-    for j in range(1, 21):
+    for j in range(1, 11):
         for k in range(1, 101):
             clf = util.XGBClassifierBS(n_bootstrap = j,
                 n_estimators = k)
@@ -123,7 +123,7 @@ for i in range(len(cities)):
     test_score_xgb = sklearn.metrics.accuracy_score(y_hat, y_hof)
     print(f"{cities.iloc[i, 0]} XGBClassifierBS {j} {k} {test_score_xgb}")
     with open(f"tex/{cities.iloc[i, 0]}.tex", "w") as fout:
-        fout.write(latex_template.format(par_xgb[0],
-            par_xgb[1], max_score_xgb, test_score_xgb,
+        fout.write(latex_template.format(cities.iloc[i, 0],
+            par_xgb[0], par_xgb[1], max_score_xgb, test_score_xgb,
             par_rf[0], par_rf[1], max_score_rf, test_score_rf))
         
