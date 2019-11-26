@@ -8,4 +8,10 @@ data/dumper/dumper
 data/combiner/src/*.o
 data/combiner/combiner
 analysis/yi/__pycache__
-analysis/yi/classify_bs/__pycache__
+analysis/yi/classify_boost/__pycache__
+analysis/yi/classify_boost_multiordinal/__pycache__
+analysis/yi/classify_boost_multiordinal/build
+analysis/yi/classify_boost_multiordinal/dist
+analysis/yi/classify_boost_multiordinal/*.egg*
+
+
