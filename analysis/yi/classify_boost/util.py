@@ -4,7 +4,7 @@ import sklearn.ensemble
 import sklearn.model_selection
 
 class RandomForestClassifierBS(sklearn.ensemble.RandomForestClassifier):
-    def __init__(self, n_bootstrap = 5, n_estimators="warn",
+    def __init__(self, n_boost = 5, n_estimators="warn",
                  criterion='gini', max_depth=None, min_samples_split=2,
                  min_samples_leaf=1, min_weight_fraction_leaf=0.0,
                  max_features='auto', max_leaf_nodes=None,
@@ -28,13 +28,13 @@ class RandomForestClassifierBS(sklearn.ensemble.RandomForestClassifier):
                 verbose=verbose,
                 warm_start=warm_start,
                 class_weight=class_weight)
-        self.n_bootstrap = n_bootstrap
+        self.n_boost = n_boost
         self.estimators = []
     def fit(self, X, y, sample_weight = None):
         pos_ind, neg_ind = y > 0, y == 0
         X_pos, y_pos = X[pos_ind], y[pos_ind]
         X_neg, y_neg = X[neg_ind], y[neg_ind]
-        for i in range(self.n_bootstrap):
+        for i in range(self.n_boost):
             X_neg_cur, _, y_neg_cur, _ =\
             sklearn.model_selection.train_test_split(X_neg,
                 y_neg, train_size = len(y_pos) + 1)
@@ -58,7 +58,7 @@ class RandomForestClassifierBS(sklearn.ensemble.RandomForestClassifier):
             for i in self.estimators], axis = 0)
 
 class XGBClassifierBS(xgboost.XGBClassifier):
-    def __init__(self, n_bootstrap = 5, max_depth=3, learning_rate=0.1,
+    def __init__(self, n_boost = 5, max_depth=3, learning_rate=0.1,
         n_estimators=100,
         verbosity=1, silent=None, objective='binary:logistic',
         booster='gbtree',
@@ -77,13 +77,13 @@ class XGBClassifierBS(xgboost.XGBClassifier):
             reg_lambda=reg_lambda, scale_pos_weight=scale_pos_weight,
             base_score=base_score, random_state=random_state, seed=seed,
             missing=missing, **kwargs)
-        self.n_bootstrap = n_bootstrap
+        self.n_boost = n_boost
         self.estimators = []
     def fit(self, X, y, sample_weight = None):
         pos_ind, neg_ind = y > 0, y == 0
         X_pos, y_pos = X[pos_ind], y[pos_ind]
         X_neg, y_neg = X[neg_ind], y[neg_ind]
-        for i in range(self.n_bootstrap):
+        for i in range(self.n_boost):
             X_neg_cur, _, y_neg_cur, _ =\
             sklearn.model_selection.train_test_split(X_neg,
                 y_neg, train_size = len(y_pos) + 1)
