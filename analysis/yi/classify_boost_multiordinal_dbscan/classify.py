@@ -5,7 +5,9 @@ import numpy
 import pandas
 import sqlalchemy
 import sklearn
+import sklearn.preprocessing
 import sklearn.metrics
+import sklearn.cluster
 
 import matplotlib.pyplot
 
@@ -77,6 +79,8 @@ ax2 = fig2.add_subplot(111)
 ax3 = fig3.add_subplot(111)
 ax4 = fig4.add_subplot(111)
 
+enc = sklearn.preprocessing.OneHotEncoder(sparse = False, categories = "auto")
+
 for i in range(len(cities)):
     data = pandas.read_sql(template.format(cities.iloc[i, 0]),
                             connection)
@@ -86,6 +90,10 @@ for i in range(len(cities)):
     many_hot = many_hot.reshape(len(wd), 54)
     X = numpy.concatenate((numpy.array(data.iloc[:, [0, 1, 2, 4, 5]]),
                            many_hot), axis = 1)
+    clustering = sklearn.cluster.DBSCAN(n_jobs = job).fit(X)
+    clustering_one_hot = enc.fit_transform(clustering.labels_
+        .reshape(-1, 1))
+    X = numpy.concatenate((X, clustering_one_hot), axis = 1)
     y = numpy.array(data["Fire"])
     ind_1 = y == 1
     ind_0 = y == 0
