@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.11.25)  4 DEC 2019 21:51
+This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.11.25)  8 DEC 2019 15:26
  system commands enabled.
 **final_report.tex
 (./final_report.tex
@@ -48,7 +48,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.079 seconds
+luaotfload | main : initialization completed in 0.058 seconds
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -753,36 +753,36 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 5.
 ) [1
 
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
 (rerunfilecheck)             Checksum: 7B4195A4805F104B1979C18ED6EE4F2C;692.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20075 strings out of 494291
+ 20076 strings out of 494291
  100000,552014 words of node,token memory allocated
  399 words of node memory still in use:
    2 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 47 glue_spec,
  5 attribute_list, 2 write nodes
-   avail lists: 1:2,2:1050,3:171,4:13,5:116,6:13,7:1792,8:9,9:283,10:7,11:129
+   avail lists: 1:2,2:1035,3:193,4:17,5:171,6:15,7:3157,8:13,9:294,10:7,11:219
  23600 multiletter control sequences out of 65536+600000
  43 fonts using 3090975 bytes
  55i,12n,67p,423b,760s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></
-usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/s
+</usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr
+/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/s
 hare/texlive/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf></usr/share/t
 exlive/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/tex
 live/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
-Output written on final_report.pdf (2 pages, 26710 bytes).
+Output written on final_report.pdf (3 pages, 29579 bytes).
 
-PDF statistics: 105 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 131072)
+PDF statistics: 109 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 131072)
  112 words of extra memory for PDF output out of 10000 (max. 100000000)
 

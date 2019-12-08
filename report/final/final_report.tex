@@ -20,7 +20,28 @@
 \end{abstract}
 
 \section{Introduction}
-
+The weather has literally been the hot topic of discussion in recent times.
+One aspect of weather data is that, when it is combined with other data
+sets, it can be used to predict varied different aspects related to
+the society. For example, one particular aspect could be how does traffic
+conditions change based on the weather in a particular city or if there is
+a correlation between crime rates and weather conditions. In this project,
+we are trying to address a more important issue of predicting wildfires in
+different cities based on weather conditions. Since the future weather data
+is readily available these days, a good model would help predict these
+wildfires in advance and take necessary precautions to completely avoid it.
+This would help avoid human and wildlife loss. It would also help contain
+the impact of these wildfires on the environment which increases the
+content of poisonous gases in the environment, making the nearby
+uninhabitable.\par
+Wildfires are growing in frequency and intensity by the day. The 2019
+wildfire season of California has more than 6800 fires recorded by the US
+Forest Service and approximately 250000 acres of burnt land. These
+wildfires could be the result of foul human activities but there has been
+a lot of speculation on the high correlation of these fires with the
+weather. Climate change is not only making the fire season longer but on
+average much more intense. The idea is to use the model to predict these
+fires in advance, thereby reducing such incidents.\par
 \section{EDA}
 \subsection{Covariates}
 \subsection{Basic Statistics}
@@ -34,7 +55,7 @@
 First, we fit XGBoost, Random Forest and SVM by using the entire dataset
 and found the accuracy to be quite low. The low accuracy could be because
 of the model overfitting. There are, afterall, 1M negative samples and
-roughly 25k positive samples.
+roughly 25k positive samples.\par
 \subsection{Experiment 1}
 Recognizing the unbalanced nature of our dataset, we created a balanced
 training data set by combining all the positive samples with a random
@@ -42,13 +63,13 @@ subset of all the negative samples. Using this balanced training data set,
 we fit XGBoost, Random Forest and SVM with RBF kernel. We observed a
 significant improvement in test accuracy in the XGBoost and Random Forest
 models; however, we have not observed any significant improvement in the
-SVM models.
+SVM models.\par
 \subsection{Experiment 2}
 Having the possibility of underfitting due to under-sampling in mind, we
 have experimented with boosting to increase accuracy. By keeping all the
 positive samples and randomly resampling negative samples equal to the
 number of positive samples, we have kept the balance of the training data
-set while making better use of the data set we have available.
+set while making better use of the data set we have available.\par
 \subsection{Experiment 3}
 
 \subsection{Experiment 4}
