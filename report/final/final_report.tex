@@ -19,6 +19,8 @@
 \begin{abstract}
 \end{abstract}
 
+\tableofcontents
+
 \section{Introduction}
 The weather has literally been the hot topic of discussion in recent times.
 One aspect of weather data is that, when it is combined with other data
@@ -50,6 +52,7 @@ fires in advance, thereby reducing such incidents.\par
 \begin{figure}[H]
     \centering
     \input{flowchart.tex}
+    \caption{Flowchart of Experiments}
 \end{figure}
 \subsection{Experiment 0}
 First, we fit XGBoost, Random Forest and SVM by using the entire dataset
@@ -71,7 +74,12 @@ positive samples and randomly resampling negative samples equal to the
 number of positive samples, we have kept the balance of the training data
 set while making better use of the data set we have available.\par
 \subsection{Experiment 3}
-
+Having observed some order in the covariate ``Weather Description'', we
+have experimented with many-hot encoding for ordinal variables. Since an
+overall could not be established by the team, we have turned to many-hot
+encoding on 3 clusters of levels and one-hot encoding on the remaining
+levels. As for models, we continued to use the boosted algorithms in the
+previous experiment.\par
 \subsection{Experiment 4}
 \subsection{Experiment 5}
 

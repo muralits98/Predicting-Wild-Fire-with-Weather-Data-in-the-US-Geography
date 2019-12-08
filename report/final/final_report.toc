@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
+\contentsline {section}{\numberline {2}EDA}{2}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Covariates}{2}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Basic Statistics}{2}{subsection.2.2}% 
+\contentsline {section}{\numberline {3}Model Building and Accuracy Tuning}{2}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Experiment 0}{2}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Experiment 1}{2}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Experiment 2}{3}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Experiment 3}{3}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Experiment 4}{3}{subsection.3.5}% 
+\contentsline {subsection}{\numberline {3.6}Experiment 5}{3}{subsection.3.6}% 
+\contentsline {section}{\numberline {4}Conclusion}{3}{section.4}% 
