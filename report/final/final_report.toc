@@ -2,11 +2,14 @@
 \contentsline {section}{\numberline {2}EDA}{2}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Covariates}{2}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Basic Statistics}{2}{subsection.2.2}% 
-\contentsline {section}{\numberline {3}Model Building and Accuracy Tuning}{2}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Experiment 0}{2}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Experiment 1}{2}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Experiment 2}{3}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Experiment 3}{3}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Experiment 4}{3}{subsection.3.5}% 
-\contentsline {subsection}{\numberline {3.6}Experiment 5}{3}{subsection.3.6}% 
-\contentsline {section}{\numberline {4}Conclusion}{3}{section.4}% 
+\contentsline {section}{\numberline {3}Model Building and Accuracy Tuning}{4}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Preliminary Analysis}{5}{subsection.3.1}% 
+\contentsline {subsubsection}{\numberline {3.1.1}Primitive Model Fitting}{5}{subsubsection.3.1.1}% 
+\contentsline {subsubsection}{\numberline {3.1.2}Under-sampling}{5}{subsubsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.2}Accurarcy Tuning}{5}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Boosting Models Fitted with Balanced Sub-samples}{5}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Clusters of Many-hot Encoding}{5}{subsubsection.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.2.3}DBScan Clustering as Feature}{5}{subsubsection.3.2.3}% 
+\contentsline {subsubsection}{\numberline {3.2.4}Stacked Ensemble}{5}{subsubsection.3.2.4}% 
+\contentsline {subsubsection}{\numberline {3.2.5}Adding XGBoost to the Ensemble Model}{5}{subsubsection.3.2.5}% 
+\contentsline {section}{\numberline {4}Conclusion}{5}{section.4}% 

@@ -46,20 +46,67 @@ average much more intense. The idea is to use the model to predict these
 fires in advance, thereby reducing such incidents.\par
 \section{EDA}
 \subsection{Covariates}
+The features that we have in our Weather dataset are:
+\begin{table}[H]
+    \centering
+    \caption{Covariates}
+    \begin{tabular}{l|l|l}
+        Covariate &Type &Description\\\hline
+        Temperature & &\\
+        Pressure & &\\
+        Humidity & &\\
+        Weather Description & &\\
+        \textbf{Need to check} & &\\
+    \end{tabular}
+\end{table}
+The features in the fire dataset is:
+\begin{enumerate}
+    \item erer
+    \item erere
+    \item erer4555
+\end{enumerate}
 \subsection{Basic Statistics}
-
+The size of the dataset in the Fires table is: $number \times number$ and
+the size in the weather table is: $1M \times 11$. The following figures
+help illustrate what the dataset looks like\par
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../res/eda1.png}
+    \caption{Response Distribution}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../res/eda2.png}
+    \caption{Histogram of Humidity}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../res/eda3.png}
+    \caption{Histogram of Air Pressure}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../res/eda5.png}
+    \caption{Histogram of Wind Speed}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../res/screenshot.png}
+    \caption{Screenshot from Visualization Tool}
+\end{figure}
 \section{Model Building and Accuracy Tuning}
 \begin{figure}[H]
     \centering
     \input{flowchart.tex}
     \caption{Flowchart of Experiments}
 \end{figure}
-\subsection{Experiment 0}
+\subsection{Preliminary Analysis}
+\subsubsection{Primitive Model Fitting}
 First, we fit XGBoost, Random Forest and SVM by using the entire dataset
 and found the accuracy to be quite low. The low accuracy could be because
 of the model overfitting. There are, afterall, 1M negative samples and
 roughly 25k positive samples.\par
-\subsection{Experiment 1}
+\subsubsection{Under-sampling}
 Recognizing the unbalanced nature of our dataset, we created a balanced
 training data set by combining all the positive samples with a random
 subset of all the negative samples. Using this balanced training data set,
@@ -67,21 +114,26 @@ we fit XGBoost, Random Forest and SVM with RBF kernel. We observed a
 significant improvement in test accuracy in the XGBoost and Random Forest
 models; however, we have not observed any significant improvement in the
 SVM models.\par
-\subsection{Experiment 2}
+\subsection{Accurarcy Tuning}
+\subsubsection{Boosting Models Fitted with Balanced Sub-samples}
 Having the possibility of underfitting due to under-sampling in mind, we
 have experimented with boosting to increase accuracy. By keeping all the
 positive samples and randomly resampling negative samples equal to the
 number of positive samples, we have kept the balance of the training data
 set while making better use of the data set we have available.\par
-\subsection{Experiment 3}
+\subsubsection{Clusters of Many-hot Encoding}
 Having observed some order in the covariate ``Weather Description'', we
 have experimented with many-hot encoding for ordinal variables. Since an
 overall could not be established by the team, we have turned to many-hot
 encoding on 3 clusters of levels and one-hot encoding on the remaining
 levels. As for models, we continued to use the boosted algorithms in the
 previous experiment.\par
-\subsection{Experiment 4}
-\subsection{Experiment 5}
+\subsubsection{DBScan Clustering as Feature}
+We have also experimented adding one-hot encoded output of an unsupervised
+clustering algorithm, DBScan as covariates to the dataset to be fitted with
+supervised models.
+\subsubsection{Stacked Ensemble}
+\subsubsection{Adding XGBoost to the Ensemble Model}
 
 \section{Conclusion}
 \end{document}
