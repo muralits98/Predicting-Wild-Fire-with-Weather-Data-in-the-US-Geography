@@ -2,20 +2,27 @@
 \begin{table}[H]
     \caption{Charlotte}
     \centering
-    \begin{tabular}{|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
+        Classifier &Meta Parameter
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &81 &0.6938 &0.6846\\
+        XGBClassifier &10 &0.0000 &0.7011 &0.0000 &0.0000
+        &0.6700 &0.6718 &0.7204 &0.6545\\
         \hline
-        RandomForestClassifier &77 &0.7055 &0.6935\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.6527 &0.6622\\
+        RandomForestClassifier &61 &0.0000 &0.7189 &0.0000 &0.0000
+        &0.6935 &0.6954 &0.7427 &0.6762\\
         \hline
     \end{tabular}
 \end{table}

@@ -2,17 +2,27 @@
 \begin{table}[H]
     \caption{Denver}
     \centering
-    \begin{tabular}{|r|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
         Classifier &\multicolumn{2}{|r|}{Meta Parameter}
-        &Training Accuracy
-        &Test Accuracy\\
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_bootstrap &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_boost &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &1 &5 &0.7799 &0.7282\\
+        XGBClassifier &5 &95 &0.7751 &0.7464 &0.1725 &0.1684
+        &0.7218 &0.7230 &0.6846 &0.7396\\
         \hline
-        RandomForestClassifier &5 &2 &0.8161 &0.7128\\
+        RandomForestClassifier &5 &62 &0.7642 &0.7641 &0.1721 &0.7378
+        &0.7526 &0.7527 &0.7641 &0.7469\\
         \hline
     \end{tabular}
 \end{table}

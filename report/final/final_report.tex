@@ -1,0 +1,58 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{hyperref}
+\usepackage{algorithmic}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows}
+
+
+\parskip 0.05in
+\begin{document}
+\title{\bf Can we predict fire with weather data?}
+\author{Harsh (hp444), Yi Yao (yy899), Murali (mt788)}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Introduction}
+
+\section{EDA}
+\subsection{Covariates}
+\subsection{Basic Statistics}
+
+\section{Model Building and Accuracy Tuning}
+\begin{figure}[H]
+    \centering
+    \input{flowchart.tex}
+\end{figure}
+\subsection{Experiment 0}
+First, we fit XGBoost, Random Forest and SVM by using the entire dataset
+and found the accuracy to be quite low. The low accuracy could be because
+of the model overfitting. There are, afterall, 1M negative samples and
+roughly 25k positive samples.
+\subsection{Experiment 1}
+Recognizing the unbalanced nature of our dataset, we created a balanced
+training data set by combining all the positive samples with a random
+subset of all the negative samples. Using this balanced training data set,
+we fit XGBoost, Random Forest and SVM with RBF kernel. We observed a
+significant improvement in test accuracy in the XGBoost and Random Forest
+models; however, we have not observed any significant improvement in the
+SVM models.
+\subsection{Experiment 2}
+Having the possibility of underfitting due to under-sampling in mind, we
+have experimented with boosting to increase accuracy. By keeping all the
+positive samples and randomly resampling negative samples equal to the
+number of positive samples, we have kept the balance of the training data
+set while making better use of the data set we have available.
+\subsection{Experiment 3}
+
+\subsection{Experiment 4}
+\subsection{Experiment 5}
+
+\section{Conclusion}
+\end{document}

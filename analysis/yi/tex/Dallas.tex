@@ -2,20 +2,27 @@
 \begin{table}[H]
     \caption{Dallas}
     \centering
-    \begin{tabular}{|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
+        Classifier &Meta Parameter
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &38 &0.7400 &0.7100\\
+        XGBClassifier &7 &0.0000 &0.7000 &0.0000 &0.0000
+        &0.7300 &0.7527 &0.8800 &0.6769\\
         \hline
-        RandomForestClassifier &45 &0.7525 &0.7200\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.5475 &0.5600\\
+        RandomForestClassifier &56 &0.0000 &0.7250 &0.0000 &0.0000
+        &0.7600 &0.7708 &0.8600 &0.7167\\
         \hline
     \end{tabular}
 \end{table}

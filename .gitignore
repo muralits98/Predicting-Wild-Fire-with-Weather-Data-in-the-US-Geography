@@ -14,4 +14,13 @@ analysis/yi/classify_boost_multiordinal*/build
 analysis/yi/classify_boost_multiordinal*/dist
 analysis/yi/classify_boost_multiordinal*/*.egg*
 analysis/yi/classify_boost_multiordinal*/.vscode
-
+analysis/yi/classify_ensemble/__pycache__
+analysis/yi/classify_ensemble/build
+analysis/yi/classify_ensemble/dist
+analysis/yi/classify_ensemble/*.egg*
+analysis/yi/classify_ensemble/.vscode
+analysis/yi/classify_xds/__pycache__
+analysis/yi/classify_xds/build
+analysis/yi/classify_xds/dist
+analysis/yi/classify_xds/*.egg*
+analysis/yi/classify_xds/.vscode

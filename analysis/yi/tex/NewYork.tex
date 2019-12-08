@@ -2,20 +2,27 @@
 \begin{table}[H]
     \caption{NewYork}
     \centering
-    \begin{tabular}{|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
+        Classifier &Meta Parameter
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &99 &0.6757 &0.6742\\
+        XGBClassifier &99 &0.0000 &0.6709 &0.0000 &0.0000
+        &0.6773 &0.6778 &0.6517 &0.6869\\
         \hline
-        RandomForestClassifier &92 &0.7144 &0.7273\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.6387 &0.6474\\
+        RandomForestClassifier &81 &0.0000 &0.7192 &0.0000 &0.0000
+        &0.7143 &0.7144 &0.7037 &0.7189\\
         \hline
     \end{tabular}
 \end{table}

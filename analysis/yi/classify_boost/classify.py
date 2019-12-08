@@ -28,17 +28,27 @@ latex_template = '''
 \\begin{{table}}[H]
     \\caption{{{}}}
     \\centering
-    \\begin{{tabular}}{{|r|r|r|r|r|}}
+    \\begin{{tabular}}{{|r|r|r|r|r|r|r|r|r|}}
         \\hline
         Classifier &\\multicolumn{{2}}{{|r|}}{{Meta Parameter}}
-        &Training Accuracy
-        &Test Accuracy\\\\
+        &\\multicolumn{{4}}{{|r|}}{{Training}}
+        &\\multicolumn{{2}}{{|r|}}{{Test}}\\\\
         \\hline
-        &n\\_bootstrap &n\\_estimators &\\multicolumn{{2}}{{|r|}}{{}}\\\\
+        &n\\_boost &n\\_estimators
+        &acc
+        &bal\\_acc
+        &prec
+        &rec
+        &acc
+        &bal\\_acc
+        &prec
+        &rec\\\\
         \\hline
-        XGBClassifier &{} &{} &{:.4f} &{:.4f}\\\\
+        XGBClassifier &{} &{} &{:.4f} &{:.4f} &{:.4f} &{:.4f}
+        &{:.4f} &{:.4f} &{:.4f} &{:.4f}\\\\
         \\hline
-        RandomForestClassifier &{} &{} &{:.4f} &{:.4f}\\\\
+        RandomForestClassifier &{} &{} &{:.4f} &{:.4f} &{:.4f} &{:.4f}
+        &{:.4f} &{:.4f} &{:.4f} &{:.4f}\\\\
         \\hline
     \\end{{tabular}}
 \\end{{table}}
@@ -55,6 +65,17 @@ if (len(sys.argv) == 2):
         job = int(sys.argv[1])
     except:
         job = -1
+
+colors = ["red", "green", "blue", "yellow", "magenta", "cyan", "orange",
+          "purple", "indigo", "gold"]
+fig1 = matplotlib.pyplot.figure()
+fig2 = matplotlib.pyplot.figure()
+fig3 = matplotlib.pyplot.figure()
+fig4 = matplotlib.pyplot.figure()
+ax1 = fig1.add_subplot(111)
+ax2 = fig2.add_subplot(111)
+ax3 = fig3.add_subplot(111)
+ax4 = fig4.add_subplot(111)
 
 for i in range(len(cities)):
     data = pandas.read_sql(template.format(cities.iloc[i, 0]),
@@ -82,48 +103,171 @@ for i in range(len(cities)):
     X_hof = numpy.concatenate((X_hof_0, X_hof_1), axis = 0)
     y_hof = numpy.concatenate((y_hof_0, y_hof_1), axis = 0)
     max_score_rf = 0
+    train_acc_rf = 0
+    train_prec_rf = 0
+    train_rec_rf = 0
     par_rf = (0, 0)
+    scores = numpy.zeros(100)
+    accs = numpy.zeros(100)
+    precs = numpy.zeros(100)
+    recs = numpy.zeros(100)
+
     for j in range(1, 11):
         for k in range(1, 101):
-            clf = util.RandomForestClassifierBS(n_bootstrap = j,
+            clf = util.RandomForestClassifierBS(n_boost = j,
                 n_estimators = k)
             score = numpy.mean(sklearn.model_selection.cross_validate(
-                clf, X_sel, y_sel, scoring = "accuracy", cv = 5,
+                clf, X_sel, y_sel, scoring = "balanced_accuracy", cv = 20,
                 n_jobs = job)["test_score"])
+            acc = numpy.mean(sklearn.model_selection.cross_validate(
+                clf, X_sel, y_sel, scoring = "accuracy", cv = 20,
+                n_jobs = job)["test_score"])
+            prec = numpy.mean(sklearn.model_selection.cross_validate(
+                clf, X_sel, y_sel, scoring = "precision", cv = 20,
+                n_jobs = job)["test_score"])
+            rec = numpy.mean(sklearn.model_selection.cross_validate(
+                clf, X_sel, y_sel, scoring = "recall", cv = 20,
+                n_jobs = job)["test_score"])
+            scores[k - 1] = score
+            accs[k - 1] = acc
+            precs[k - 1] = prec
+            recs[k - 1] = rec
             print(cities.iloc[i, 0], "RandomForestClassifierBS",
-                j, k, score)
+                j, k, acc, score)
             if (score > max_score_rf):
                 par_rf = (j, k)
                 max_score_rf = score
-    clf = util.RandomForestClassifierBS(n_bootstrap = par_rf[0],
+        label = f"n_boost = {j}"
+        ax1.plot(scores, color = colors[j - 1], label = label)
+        ax2.plot(accs, color = colors[j - 1], label = label)
+        ax3.plot(precs, color = colors[j - 1], label = label)
+        ax4.plot(recs, color = colors[j - 1], label = label)
+
+    ax1.set_xlabel("n_estimator")
+    ax1.set_ylabel("balanced accuracy")
+    ax1.legend()
+    ax2.set_xlabel("n_estimator")
+    ax2.set_ylabel("accuracy")
+    ax2.legend()
+    ax3.set_xlabel("n_estimator")
+    ax3.set_ylabel("precision")
+    ax3.legend()
+    ax4.set_xlabel("n_estimator")
+    ax4.set_ylabel("recall")
+    ax4.legend()
+    fig1.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+    fig1.savefig(
+        f"plot/{cities.iloc[i, 0]}RandomForestClassifierBS_1.pdf")
+    fig2.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+    fig2.savefig(
+        f"plot/{cities.iloc[i, 0]}RandomForestClassifierBS_2.pdf")
+    fig3.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+    fig3.savefig(
+        f"plot/{cities.iloc[i, 0]}RandomForestClassifierBS_3.pdf")
+    fig4.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+    fig4.savefig(
+        f"plot/{cities.iloc[i, 0]}RandomForestClassifierBS_4.pdf")
+    ax1.clear()
+    ax2.clear()
+    ax3.clear()
+    ax4.clear()
+    
+    clf = util.RandomForestClassifierBS(n_boost = par_rf[0],
         n_estimators = par_rf[1])
     clf.fit(X_sel, y_sel)
     y_hat = clf.predict(X_hof)
-    test_score_rf = sklearn.metrics.accuracy_score(y_hat, y_hof)
+    test_score_rf = sklearn.metrics.balanced_accuracy_score(y_hat, y_hof)
+    test_acc_rf = sklearn.metrics.accuracy_score(y_hat, y_hof)
+    test_prec_rf = sklearn.metrics.precision_score(y_hat, y_hof)
+    test_rec_rf = sklearn.metrics.recall_score(y_hat, y_hof)
     print(
         f"{cities.iloc[i, 0]} RandomForestClassifierBS {j} {k} {test_score_rf}")
     max_score_xgb = 0
+    train_acc_xgb = 0
+    train_prec_xgb = 0
+    train_rec_xgb = 0
     par_xgb = (0, 0)
+
     for j in range(1, 11):
         for k in range(1, 101):
-            clf = util.XGBClassifierBS(n_bootstrap = j,
+            clf = util.XGBClassifierBS(n_boost = j,
                 n_estimators = k)
             score = numpy.mean(sklearn.model_selection.cross_validate(
-                clf, X_sel, y_sel, scoring = "accuracy", cv = 5,
+                clf, X_sel, y_sel, scoring = "balanced_accuracy", cv = 20,
                 n_jobs = job)["test_score"])
+            acc = numpy.mean(sklearn.model_selection.cross_validate(
+                clf, X_sel, y_sel, scoring = "accuracy", cv = 20,
+                n_jobs = job)["test_score"])
+            prec = numpy.mean(sklearn.model_selection.cross_validate(
+                clf, X_sel, y_sel, scoring = "precision", cv = 20,
+                n_jobs = job)["test_score"])
+            rec = numpy.mean(sklearn.model_selection.cross_validate(
+                clf, X_sel, y_sel, scoring = "precision", cv = 20,
+                n_jobs = job)["test_score"])
+            scores[k - 1] = score
+            accs[k - 1] = acc
+            precs[k - 1] = prec
+            recs[k - 1] = rec
             print(cities.iloc[i, 0], "XGBClassifierBS",
                 j, k, score)
             if (score > max_score_xgb):
                 par_xgb = (j, k)
                 max_score_xgb = score
-    clf = util.XGBClassifierBS(n_bootstrap = par_xgb[0],
+                train_acc_xgb = acc
+                train_prec_xgb = prec
+                train_rec_xgb = rec
+        label = f"n_boost = {j}"
+        ax1.plot(scores, color = colors[j - 1], label = label)
+        ax2.plot(accs, color = colors[j - 1], label = label)
+        ax3.plot(precs, color = colors[j - 1], label = label)
+        ax4.plot(recs, color = colors[j - 1], label = label)
+
+    ax1.set_xlabel("n_estimator")
+    ax1.set_ylabel("balanced accuracy")
+    ax1.legend()
+    ax2.set_xlabel("n_estimator")
+    ax2.set_ylabel("accuracy")
+    ax2.legend()
+    ax3.set_xlabel("n_estimator")
+    ax3.set_ylabel("precision")
+    ax3.legend()
+    ax4.set_xlabel("n_estimator")
+    ax4.set_ylabel("recall")
+    ax4.legend()
+    fig1.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+    fig1.savefig(
+        f"plot/{cities.iloc[i, 0]}XGBClassifierBS_1.pdf")
+    fig2.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+    fig2.savefig(
+        f"plot/{cities.iloc[i, 0]}XGBClassifierBS_2.pdf")
+    fig3.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+    fig3.savefig(
+        f"plot/{cities.iloc[i, 0]}XGBClassifierBS_3.pdf")
+    fig4.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+    fig4.savefig(
+        f"plot/{cities.iloc[i, 0]}XGBClassifierBS_4.pdf")
+    ax1.clear()
+    ax2.clear()
+    ax3.clear()
+    ax4.clear()
+
+    clf = util.XGBClassifierBS(n_boost = par_xgb[0],
         n_estimators = par_xgb[1])
     clf.fit(X_sel, y_sel)
     y_hat = clf.predict(X_hof)
-    test_score_xgb = sklearn.metrics.accuracy_score(y_hat, y_hof)
+    test_score_xgb = sklearn.metrics.balanced_accuracy_score(y_hat, y_hof)
+    test_acc_xgb = sklearn.metrics.accuracy_score(y_hat, y_hof)
+    test_prec_xgb = sklearn.metrics.precision_score(y_hat, y_hof)
+    test_rec_xgb = sklearn.metrics.recall_score(y_hat, y_hof)
     print(f"{cities.iloc[i, 0]} XGBClassifierBS {j} {k} {test_score_xgb}")
     with open(f"tex/{cities.iloc[i, 0]}.tex", "w") as fout:
         fout.write(latex_template.format(cities.iloc[i, 0],
-            par_xgb[0], par_xgb[1], max_score_xgb, test_score_xgb,
-            par_rf[0], par_rf[1], max_score_rf, test_score_rf))
+            par_xgb[0], par_xgb[1], train_acc_xgb, max_score_xgb,
+            train_prec_xgb, train_rec_xgb, 
+            test_acc_xgb, test_score_xgb,
+            test_prec_xgb, test_rec_xgb,
+            par_rf[0], par_rf[1], train_acc_rf, max_score_rf,
+            train_prec_rf, train_rec_rf,
+            test_acc_rf, test_score_rf,
+            test_prec_rf, test_rec_rf))
         

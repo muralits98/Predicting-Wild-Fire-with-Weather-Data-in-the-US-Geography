@@ -2,19 +2,27 @@
 \begin{table}[H]
     \caption{Atlanta}
     \centering
-    \begin{tabular}{|r|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
         Classifier &\multicolumn{2}{|r|}{Meta Parameter}
-        &Training
-        &Training\\
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_bootstrap &n\_estimators
+        &n\_boost &n\_estimators
+        &acc
         &bal\_acc
-        &bal\_acc\\
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &9 &91 &0.7167 &0.7285\\
+        XGBClassifier &5 &94 &0.6861 &0.7130 &0.1215 &0.1217
+        &0.7189 &0.7214 &0.7720 &0.6979\\
         \hline
-        RandomForestClassifier &2 &94 &0.7343 &0.7490\\
+        RandomForestClassifier &10 &88 &0.7128 &0.7384 &0.1360 &0.7495
+        &0.7124 &0.7125 &0.7202 &0.7092\\
         \hline
     \end{tabular}
 \end{table}

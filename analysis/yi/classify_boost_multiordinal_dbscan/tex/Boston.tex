@@ -2,19 +2,27 @@
 \begin{table}[H]
     \caption{Boston}
     \centering
-    \begin{tabular}{|r|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
         Classifier &\multicolumn{2}{|r|}{Meta Parameter}
-        &Training
-        &Training\\
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_bootstrap &n\_estimators
+        &n\_boost &n\_estimators
+        &acc
         &bal\_acc
-        &bal\_acc\\
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &5 &72 &0.7905 &0.7446\\
+        XGBClassifier &8 &69 &0.7344 &0.7814 &0.0350 &0.0345
+        &0.7824 &0.7914 &0.8706 &0.7400\\
         \hline
-        RandomForestClassifier &2 &92 &0.8015 &0.7589\\
+        RandomForestClassifier &8 &100 &0.7703 &0.8023 &0.0410 &0.7921
+        &0.7353 &0.7353 &0.7294 &0.7381\\
         \hline
     \end{tabular}
 \end{table}

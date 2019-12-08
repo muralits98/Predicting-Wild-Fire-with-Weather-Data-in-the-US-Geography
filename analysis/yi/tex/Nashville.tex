@@ -2,20 +2,27 @@
 \begin{table}[H]
     \caption{Nashville}
     \centering
-    \begin{tabular}{|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
+        Classifier &Meta Parameter
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &99 &0.7305 &0.7619\\
+        XGBClassifier &97 &0.0000 &0.7338 &0.0000 &0.0000
+        &0.7449 &0.7482 &0.8027 &0.7195\\
         \hline
-        RandomForestClassifier &80 &0.7458 &0.7313\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.6091 &0.5986\\
+        RandomForestClassifier &92 &0.0000 &0.7702 &0.0000 &0.0000
+        &0.7687 &0.7719 &0.8231 &0.7423\\
         \hline
     \end{tabular}
 \end{table}

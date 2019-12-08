@@ -2,17 +2,27 @@
 \begin{table}[H]
     \caption{Albuquerque}
     \centering
-    \begin{tabular}{|r|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
         Classifier &\multicolumn{2}{|r|}{Meta Parameter}
-        &Training Accuracy
-        &Test Accuracy\\
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_bootstrap &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_boost &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &3 &45 &0.6917 &0.6333\\
+        XGBClassifier &3 &100 &0.6745 &0.6635 &0.1311 &0.1330
+        &0.6519 &0.6523 &0.6260 &0.6601\\
         \hline
-        RandomForestClassifier &10 &2 &0.7891 &0.6043\\
+        RandomForestClassifier &2 &95 &0.0000 &0.7063 &0.0000 &0.0000
+        &0.6911 &0.6911 &0.6963 &0.6892\\
         \hline
     \end{tabular}
 \end{table}

@@ -2,20 +2,27 @@
 \begin{table}[H]
     \caption{Chicago}
     \centering
-    \begin{tabular}{|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
+        Classifier &Meta Parameter
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &12 &0.7732 &0.7045\\
+        XGBClassifier &56 &0.0000 &0.7850 &0.0000 &0.0000
+        &0.8182 &0.8182 &0.8182 &0.8182\\
         \hline
-        RandomForestClassifier &95 &0.8141 &0.8182\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.5863 &0.6136\\
+        RandomForestClassifier &87 &0.0000 &0.8325 &0.0000 &0.0000
+        &0.7727 &0.7821 &0.6818 &0.8333\\
         \hline
     \end{tabular}
 \end{table}

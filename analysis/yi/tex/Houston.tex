@@ -2,20 +2,27 @@
 \begin{table}[H]
     \caption{Houston}
     \centering
-    \begin{tabular}{|r|r|r|r|}
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
         \hline
-        Classifier &Meta Parameter &Training Accuracy
-        &Test Accuracy\\
+        Classifier &Meta Parameter
+        &\multicolumn{4}{|r|}{Training}
+        &\multicolumn{2}{|r|}{Test}\\
         \hline
-        &n\_estimators &\multicolumn{2}{|r|}{}\\
+        &n\_estimators
+        &acc
+        &bal\_acc
+        &prec
+        &rec
+        &acc
+        &bal\_acc
+        &prec
+        &rec\\
         \hline
-        XGBClassifier &84 &0.6960 &0.7057\\
+        XGBClassifier &96 &0.0000 &0.7045 &0.0000 &0.0000
+        &0.7247 &0.7267 &0.6772 &0.7483\\
         \hline
-        RandomForestClassifier &47 &0.7365 &0.7437\\
-        \hline
-        &C &\multicolumn{2}{|r|}{}\\
-        \hline
-        SVC &0.5000 &0.5944 &0.5696\\
+        RandomForestClassifier &78 &0.0000 &0.7417 &0.0000 &0.0000
+        &0.7057 &0.7058 &0.6962 &0.7097\\
         \hline
     \end{tabular}
 \end{table}

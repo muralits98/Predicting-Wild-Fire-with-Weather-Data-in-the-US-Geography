@@ -1,0 +1,63 @@
+\tikzstyle{block} = [rectangle, draw]
+\tikzstyle{line} = [draw, -latex']
+\begin{tikzpicture}
+    \node [block] (n0)
+    {$\begin{array}{l}
+        \textbf{Experiment 0}\\
+        \textrm{Random Forest}\\
+        \textrm{XGBoost}\\
+        \textrm{SVM with RBF Kernel}\\
+        \textrm{Categorical Encoding}\\
+    \end{array}$};
+    \node [block, right of = n0, node distance = 55mm] (n1)
+    {$\begin{array}{l}
+        \textbf{Experiment 1}\\
+        \textrm{Random Forest}\\
+        \textrm{XGBoost}\\
+        \textrm{SVM with RBF Kernel}\\
+        \textrm{Balanced Under-sampling}\\
+        \textrm{Categorical Encoding}\\
+    \end{array}$};
+    \node [block, below of = n1, node distance = 30mm] (n2)
+    {$\begin{array}{l}
+        \textbf{Experiment 2}\\
+        \textrm{Boosted Random Forest}\\
+        \textrm{Boosted XGBoost}\\
+        \textrm{Balanced Under-sampling}\\
+        \textrm{Categorical Encoding}\\
+    \end{array}$};
+    \node [block, left of = n2, node distance = 53mm] (n3)
+    {$\begin{array}{l}
+        \textbf{Experiment 3}\\
+        \textrm{Random Forest}\\
+        \textrm{XGBoost}\\
+        \textrm{Balanced Under-sampling}\\
+        \textrm{Boosting}\\
+        \textrm{Ordinal Encoding}\\
+    \end{array}$};
+    \node [block, below of = n3, node distance = 35mm] (n4)
+    {$\begin{array}{l}
+        \textbf{Experiment 4}\\
+        \textrm{Random Forest}\\
+        \textrm{XGBoost}\\
+        \textrm{Balanced Under-sampling}\\
+        \textrm{Boosting}\\
+        \textrm{Ordinal Encoding}\\
+        \textrm{DBScan Clustering as Feature}\\
+    \end{array}$};
+    \node [block, right of = n4, node distance = 60mm] (n5)
+    {$\begin{array}{l}
+        \textbf{Experiment 5}\\
+        \textrm{SVM with RBF Kernel}\\
+        \textrm{Decision Tree}\\
+        \textrm{Stacked Ensemble}\\
+        \textrm{Balanced Under-sampling}\\
+        \textrm{Ordinal Encoding}\\
+        \textrm{DBScan Clustering as Feature}\\
+    \end{array}$};
+    \path [line] (n0) -- (n1);
+    \path [line] (n1) -- (n2);
+    \path [line] (n2) -- (n3);
+    \path [line] (n3) -- (n4);
+    \path [line] (n4) -- (n5);
+\end{tikzpicture}
