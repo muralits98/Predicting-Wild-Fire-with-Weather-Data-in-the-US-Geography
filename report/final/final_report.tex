@@ -6,6 +6,7 @@
 \usepackage[margin=1.0in]{geometry}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage{sidecap}
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows}
 
@@ -16,10 +17,8 @@
 \author{Harsh (hp444), Yi Yao (yy899), Murali (mt788)}
 \maketitle
 
-\begin{abstract}
-\end{abstract}
-
 \tableofcontents
+\newpage
 
 \section{Introduction}
 The weather has literally been the hot topic of discussion in recent times.
@@ -83,29 +82,87 @@ the size of the final table is: $1,629,108\times 11$. The following
 figures help illustrate what the final dataset looks like:\par
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{../res/eda1.png}
-    \caption{Response Distribution}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../res/eda1.png}
+        \caption{Response Distribution}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../res/eda2.png}
+        \caption{Histogram of Humidity}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../res/eda3.png}
+        \caption{Histogram of Pressure}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../res/eda5.png}
+        \caption{Histogram of Wind Speed}
+    \end{subfigure}
+    \caption{Visualization}
 \end{figure}
+
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{../res/eda2.png}
-    \caption{Histogram of Humidity}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../plot/byhour_sf.pdf}
+        \caption{San Francisco}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../plot/byhour_ny.pdf}
+        \caption{New York}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../plot/byhour_all.pdf}
+        \caption{All Cities}
+    \end{subfigure}
+    \caption{Hourly Fire Distribution}
 \end{figure}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{../res/eda3.png}
-    \caption{Histogram of Pressure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../plot/corr_sf.pdf}
+        \caption{San Francisco}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../plot/corr_ny.pdf}
+        \caption{New York}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{../plot/corr_all.pdf}
+        \caption{All Cities}
+    \end{subfigure}
+    \caption{Correlation Plot}
 \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../res/eda5.png}
-    \caption{Histogram of Wind Speed}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{../res/screenshot.png}
-    \caption{Screenshot from Visualization Tool}
-\end{figure}
+
+From Figure 1, we observed that we have
+significantly fewer positive samples (data points where the fire indicator
+has value 1) than negative samples (data points where the fire indicator
+has value 0).\par
+
+From Figure 2, we observed that very few fires are recorded in the time
+span of 00:00 to 10:00, while almost all fires are recorded in the time
+span of 10:00 to 23:00. We have realized that the negative samples in that
+time span might be due to missing data, or people not reporting during
+that time span. If we fit a hourly seasonality model, we may overfit
+to data points in this time span, and end up
+predicting no fire in this time span, potentially making our models
+Weapons of Math Destruction.\par
+
+From Figure 3, we observed that the correlation between features is
+DIFFERENT in different cities, as well as overall, which justifies
+our decision to build city-specific models.\par
 \section{Brief Description of Algorithms and Definitions Used}
 \subsection{XGBoost}
 XGBoost is an implementation of gradient boosted decision trees designed
@@ -221,7 +278,17 @@ follows:\par
     fires in California?
     \textbf{Answer}
     \item[$\ast$]
-    This project may be a weapon of math destruction because 
+    Incorrectly predicting that a city will not have an occurence of
+    fire may lead to unpreparedness on the part of the fire services
+    which will further cause data points to pop up as ``fire'' until our
+    model really learns that there are a lot of fires. Our project may
+    in this sense a weapon of math destruction. This problem can be 
+    overcome by including many more features, more intelligible data and
+    bumping up the accuracy to an acceptable level.
+    \item[$\ast$]
+    Since we have built a complete tool-chain from data-cleaning to
+    automated parameter selection, we are willing to use it in production
+    given that the company continues to use the same data sources.
 \end{enumerate}
 \nocite{*}
 \bibliographystyle{acm}

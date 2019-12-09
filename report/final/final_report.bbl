@@ -3,6 +3,14 @@
 \bibitem{balanced-accuracy}
 {\scshape Brodersen, K.~H., Ong, C.~S., Stephan, K.~E., and Buhmann, J.~M.}
 \newblock The balanced accuracy and its posterior distribution.
+\newblock {\em ICPR '10 Proceedings of the 2010 20th International Conference
+  on Pattern Recognition\/} (2010), 3121--3124.
+
+\bibitem{nori2019interpretml}
+{\scshape Nori, H., Jenkins, S., Koch, P., and Caruana, R.}
+\newblock Interpretml: A unified framework for machine learning
+  interpretability.
+\newblock {\em arXiv preprint arXiv:1909.09223\/} (2019).
 
 \bibitem{scikit-learn}
 {\scshape Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B.,
@@ -11,5 +19,21 @@
   Duchesnay, E.}
 \newblock Scikit-learn: Machine learning in python.
 \newblock {\em Journal of Machine Learning Research 12\/} (2011), 2825--2830.
+
+\bibitem{wiki-dt}
+{\scshape {Wikipedia contributors}}.
+\newblock Decision tree --- wikipedia, the free encyclopedia.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=Decision_tree&oldid=929548230},
+  2019.
+\newblock [Online; accessed 9-December-2019].
+
+\bibitem{wiki-svm}
+{\scshape {Wikipedia contributors}}.
+\newblock Support-vector machine --- wikipedia, the free encyclopedia.
+\newblock
+  \url{https://en.wikipedia.org/w/index.php?title=Support-vector_machine&oldid=928737848},
+  2019.
+\newblock [Online; accessed 9-December-2019].
 
 \end{thebibliography}

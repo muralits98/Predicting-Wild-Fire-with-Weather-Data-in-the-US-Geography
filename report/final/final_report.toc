@@ -1,20 +1,20 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
 \contentsline {section}{\numberline {2}EDA}{2}{section.2}% 
 \contentsline {subsection}{\numberline {2.1}Covariates}{2}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Basic Statistics}{2}{subsection.2.2}% 
 \contentsline {section}{\numberline {3}Brief Description of Algorithms and Definitions Used}{4}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}XGBoost}{4}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}SVM}{5}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Decision Trees}{5}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}DBScan}{5}{subsection.3.4}% 
-\contentsline {subsection}{\numberline {3.5}Balanced Accuracy}{5}{subsection.3.5}% 
+\contentsline {subsection}{\numberline {3.2}SVM}{4}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Decision Trees}{4}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}DBScan}{4}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Balanced Accuracy}{4}{subsection.3.5}% 
 \contentsline {section}{\numberline {4}Model Building and Accuracy Tuning}{5}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Preliminary Analysis}{6}{subsection.4.1}% 
-\contentsline {subsubsection}{\numberline {4.1.1}Experiment 0 - Primitive Model Fitting}{6}{subsubsection.4.1.1}% 
-\contentsline {subsubsection}{\numberline {4.1.2}Experiment 1 - Under-sampling}{6}{subsubsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.1}Preliminary Analysis}{5}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}Experiment 0 - Primitive Model Fitting}{5}{subsubsection.4.1.1}% 
+\contentsline {subsubsection}{\numberline {4.1.2}Experiment 1 - Under-sampling}{5}{subsubsection.4.1.2}% 
 \contentsline {subsection}{\numberline {4.2}Accurarcy Tuning}{6}{subsection.4.2}% 
 \contentsline {subsubsection}{\numberline {4.2.1}Experiment 2 - Boosting Models Fitted with Balanced Sub-samples}{6}{subsubsection.4.2.1}% 
 \contentsline {subsubsection}{\numberline {4.2.2}Experiment 3 - Clusters of Many-hot Encoding}{6}{subsubsection.4.2.2}% 
 \contentsline {subsubsection}{\numberline {4.2.3}Experiment 4 - DBScan Clustering as Feature}{6}{subsubsection.4.2.3}% 
 \contentsline {subsubsection}{\numberline {4.2.4}Experiment 5 - Stacked Ensemble}{6}{subsubsection.4.2.4}% 
-\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}% 
+\contentsline {section}{\numberline {5}Conclusion}{6}{section.5}% 

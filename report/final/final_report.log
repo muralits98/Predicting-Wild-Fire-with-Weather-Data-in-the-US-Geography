@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.11.25)  8 DEC 2019 20:47
+This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.11.25)  9 DEC 2019 00:43
  system commands enabled.
 **final_report.tex
 (./final_report.tex
@@ -48,7 +48,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.077 seconds
+luaotfload | main : initialization completed in 0.074 seconds
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -269,17 +269,26 @@ Package caption Info: hyperref package is loaded.
 \c@subfigure=\count109
 \c@subtable=\count110
 )
+(/usr/share/texlive/texmf-dist/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+\SC@BOXWD=\dimen124
+\SC@CAPWD=\dimen125
+\SC@tempdima=\dimen126
+\SC@tempdimb=\dimen127
+\c@SC@C=\count111
+\SC@BOX=\box29
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks20
-\pgfutil@tempdima=\dimen124
-\pgfutil@tempdimb=\dimen125
+\pgfutil@tempdima=\dimen128
+\pgfutil@tempdimb=\dimen129
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box29
+\pgfutil@abb=\box30
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -302,26 +311,26 @@ Package: pgfsys 2019/08/03 v3.1.4b (3.1.4b)
 ex
 \pgfkeys@tmptoks=\toks23
 ))
-\pgf@x=\dimen126
-\pgf@y=\dimen127
-\pgf@xa=\dimen128
-\pgf@ya=\dimen129
-\pgf@xb=\dimen130
-\pgf@yb=\dimen131
-\pgf@xc=\dimen132
-\pgf@yc=\dimen133
-\pgf@xd=\dimen134
-\pgf@yd=\dimen135
+\pgf@x=\dimen130
+\pgf@y=\dimen131
+\pgf@xa=\dimen132
+\pgf@ya=\dimen133
+\pgf@xb=\dimen134
+\pgf@yb=\dimen135
+\pgf@xc=\dimen136
+\pgf@yc=\dimen137
+\pgf@xd=\dimen138
+\pgf@yd=\dimen139
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count111
-\c@pgf@countb=\count112
-\c@pgf@countc=\count113
-\c@pgf@countd=\count114
+\c@pgf@counta=\count112
+\c@pgf@countb=\count113
+\c@pgf@countc=\count114
+\c@pgf@countd=\count115
 \t@pgf@toka=\toks24
 \t@pgf@tokb=\toks25
 \t@pgf@tokc=\toks26
-\pgf@sys@id@count=\count115
+\pgf@sys@id@count=\count116
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2019/08/03 v3.1.4b (3.1.4b)
 )
@@ -337,8 +346,8 @@ File: pgfsys-common-pdf.def 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfsyssoftpath@smallbuffer@items=\count116
-\pgfsyssoftpath@bigbuffer@items=\count117
+\pgfsyssoftpath@smallbuffer@items=\count117
+\pgfsyssoftpath@bigbuffer@items=\count118
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -367,9 +376,9 @@ Package: pgfcore 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen136
-\pgfmath@count=\count118
-\pgfmath@box=\box30
+\pgfmath@dimen=\dimen140
+\pgfmath@count=\count119
+\pgfmath@box=\box31
 \pgfmath@toks=\toks27
 \pgfmath@stack@operand=\toks28
 \pgfmath@stack@operation=\toks29
@@ -392,58 +401,58 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count119
+\c@pgfmathroundto@lastzeros=\count120
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@picminx=\dimen137
-\pgf@picmaxx=\dimen138
-\pgf@picminy=\dimen139
-\pgf@picmaxy=\dimen140
-\pgf@pathminx=\dimen141
-\pgf@pathmaxx=\dimen142
-\pgf@pathminy=\dimen143
-\pgf@pathmaxy=\dimen144
-\pgf@xx=\dimen145
-\pgf@xy=\dimen146
-\pgf@yx=\dimen147
-\pgf@yy=\dimen148
-\pgf@zx=\dimen149
-\pgf@zy=\dimen150
+\pgf@picminx=\dimen141
+\pgf@picmaxx=\dimen142
+\pgf@picminy=\dimen143
+\pgf@picmaxy=\dimen144
+\pgf@pathminx=\dimen145
+\pgf@pathmaxx=\dimen146
+\pgf@pathminy=\dimen147
+\pgf@pathmaxy=\dimen148
+\pgf@xx=\dimen149
+\pgf@xy=\dimen150
+\pgf@yx=\dimen151
+\pgf@yy=\dimen152
+\pgf@zx=\dimen153
+\pgf@zy=\dimen154
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@path@lastx=\dimen151
-\pgf@path@lasty=\dimen152
+\pgf@path@lastx=\dimen155
+\pgf@path@lasty=\dimen156
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@shorten@end@additional=\dimen153
-\pgf@shorten@start@additional=\dimen154
+\pgf@shorten@end@additional=\dimen157
+\pgf@shorten@start@additional=\dimen158
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfpic=\box31
-\pgf@hbox=\box32
-\pgf@layerbox@main=\box33
-\pgf@picture@serial@count=\count120
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count121
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgflinewidth=\dimen155
+\pgflinewidth=\dimen159
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@pt@x=\dimen156
-\pgf@pt@y=\dimen157
-\pgf@pt@temp=\dimen158
+\pgf@pt@x=\dimen160
+\pgf@pt@y=\dimen161
+\pgf@pt@temp=\dimen162
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -459,13 +468,13 @@ File: pgfcorepathprocessing.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfarrowsep=\dimen159
+\pgfarrowsep=\dimen163
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@max=\dimen160
-\pgf@sys@shading@range@num=\count121
-\pgf@shadingcount=\count122
+\pgf@max=\dimen164
+\pgf@sys@shading@range@num=\count122
+\pgf@shadingcount=\count123
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
@@ -473,7 +482,7 @@ File: pgfcoreimage.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfexternal@startupbox=\box34
+\pgfexternal@startupbox=\box35
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -492,15 +501,15 @@ File: pgfcorerdf.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfnodeparttextbox=\box35
+\pgfnodeparttextbox=\box36
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@nodesepstart=\dimen161
-\pgf@nodesepend=\dimen162
+\pgf@nodesepstart=\dimen165
+\pgf@nodesepend=\dimen166
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -514,8 +523,8 @@ Package: pgfcomp-version-1-18 2019/08/03 v3.1.4b (3.1.4b)
 Package: pgffor 2019/08/03 v3.1.4b (3.1.4b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen163
-\pgffor@skip=\dimen164
+\pgffor@iter=\dimen167
+\pgffor@skip=\dimen168
 \pgffor@stack=\toks30
 \pgffor@toks=\toks31
 ))
@@ -525,33 +534,33 @@ Package: tikz 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@plot@mark@count=\count123
-\pgfplotmarksize=\dimen165
+\pgf@plot@mark@count=\count124
+\pgfplotmarksize=\dimen169
 )
-\tikz@lastx=\dimen166
-\tikz@lasty=\dimen167
-\tikz@lastxsaved=\dimen168
-\tikz@lastysaved=\dimen169
-\tikz@lastmovetox=\dimen170
-\tikz@lastmovetoy=\dimen171
-\tikzleveldistance=\dimen172
-\tikzsiblingdistance=\dimen173
-\tikz@figbox=\box36
-\tikz@figbox@bg=\box37
-\tikz@tempbox=\box38
-\tikz@tempbox@bg=\box39
-\tikztreelevel=\count124
-\tikznumberofchildren=\count125
-\tikznumberofcurrentchild=\count126
-\tikz@fig@count=\count127
+\tikz@lastx=\dimen170
+\tikz@lasty=\dimen171
+\tikz@lastxsaved=\dimen172
+\tikz@lastysaved=\dimen173
+\tikz@lastmovetox=\dimen174
+\tikz@lastmovetoy=\dimen175
+\tikzleveldistance=\dimen176
+\tikzsiblingdistance=\dimen177
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count125
+\tikznumberofchildren=\count126
+\tikznumberofcurrentchild=\count127
+\tikz@fig@count=\count128
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfmatrixcurrentrow=\count128
-\pgfmatrixcurrentcolumn=\count129
-\pgf@matrix@numberofcolumns=\count130
+\pgfmatrixcurrentrow=\count129
+\pgfmatrixcurrentcolumn=\count130
+\pgf@matrix@numberofcolumns=\count131
 )
-\tikz@expandcount=\count131
+\tikz@expandcount=\count132
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -604,26 +613,26 @@ File: tikzlibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgfnodepartlowerbox=\box40
-\pgfnodeparttwobox=\box41
-\pgfnodepartthreebox=\box42
-\pgfnodepartfourbox=\box43
-\pgfnodeparttwentybox=\box44
-\pgfnodepartnineteenbox=\box45
-\pgfnodeparteighteenbox=\box46
-\pgfnodepartseventeenbox=\box47
-\pgfnodepartsixteenbox=\box48
-\pgfnodepartfifteenbox=\box49
-\pgfnodepartfourteenbox=\box50
-\pgfnodepartthirteenbox=\box51
-\pgfnodeparttwelvebox=\box52
-\pgfnodepartelevenbox=\box53
-\pgfnodeparttenbox=\box54
-\pgfnodepartninebox=\box55
-\pgfnodeparteightbox=\box56
-\pgfnodepartsevenbox=\box57
-\pgfnodepartsixbox=\box58
-\pgfnodepartfivebox=\box59
+\pgfnodepartlowerbox=\box41
+\pgfnodeparttwobox=\box42
+\pgfnodepartthreebox=\box43
+\pgfnodepartfourbox=\box44
+\pgfnodeparttwentybox=\box45
+\pgfnodepartnineteenbox=\box46
+\pgfnodeparteighteenbox=\box47
+\pgfnodepartseventeenbox=\box48
+\pgfnodepartsixteenbox=\box49
+\pgfnodepartfifteenbox=\box50
+\pgfnodepartfourteenbox=\box51
+\pgfnodepartthirteenbox=\box52
+\pgfnodeparttwelvebox=\box53
+\pgfnodepartelevenbox=\box54
+\pgfnodeparttenbox=\box55
+\pgfnodepartninebox=\box56
+\pgfnodeparteightbox=\box57
+\pgfnodepartsevenbox=\box58
+\pgfnodepartsixbox=\box59
+\pgfnodepartfivebox=\box60
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -632,39 +641,39 @@ File: tikzlibraryarrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\arrowsize=\dimen174
+\arrowsize=\dimen178
 )) (./final_report.aux)
 \openout1 = final_report.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
-\scratchdimen=\dimen175
-\scratchbox=\box60
-\nofMPsegments=\count133
-\nofMParguments=\count134
+\scratchcounter=\count133
+\scratchdimen=\dimen179
+\scratchbox=\box61
+\nofMPsegments=\count134
+\nofMParguments=\count135
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count135
-\MPscratchDim=\dimen176
-\MPnumerator=\count136
-\makeMPintoPDFobject=\count137
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen180
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
 \everyMPtoPDFconversion=\toks33
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -683,8 +692,8 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box61
-Package hyperref Info: Link coloring OFF on input line 14.
+\AtBeginShipoutBox=\box62
+Package hyperref Info: Link coloring OFF on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -692,11 +701,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count138
+\c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
 
 (./final_report.out) (./final_report.out)
 \@outlinefile=\write4
@@ -738,14 +747,39 @@ LaTeX Info: Redefining \nameref on input line 14.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: sidecap package is loaded.
 Package caption Info: End \AtBeginDocument code.
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 126.
+)
+\CenteringLeftskip=\skip46
+\RaggedLeftLeftskip=\skip47
+\RaggedRightLeftskip=\skip48
+\CenteringRightskip=\skip49
+\RaggedLeftRightskip=\skip50
+\RaggedRightRightskip=\skip51
+\CenteringParfillskip=\skip52
+\RaggedLeftParfillskip=\skip53
+\RaggedRightParfillskip=\skip54
+\JustifyingParfillskip=\skip55
+\CenteringParindent=\skip56
+\RaggedLeftParindent=\skip57
+\RaggedRightParindent=\skip58
+\JustifyingParindent=\skip59
+)
 ABD: EveryShipout initializing macros
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 18.
+(Font)              <12> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 18.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 18.
+(Font)              <6> on input line 19.
  (./final_report.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
@@ -758,71 +792,98 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
-<../res/eda1.png, id=119, 702.625pt x 451.6875pt>
+<../res/eda1.png, id=118, 702.625pt x 451.6875pt>
 File: ../res/eda1.png Graphic file (type png)
 <use ../res/eda1.png>
-Package luatex.def Info: ../res/eda1.png  used on input line 86.
-(luatex.def)             Requested size: 234.8775pt x 150.99403pt.
-<../res/eda2.png, id=120, 702.625pt x 451.6875pt>
+Package luatex.def Info: ../res/eda1.png  used on input line 87.
+(luatex.def)             Requested size: 180.385pt x 115.96104pt.
+<../res/eda2.png, id=119, 702.625pt x 451.6875pt>
 File: ../res/eda2.png Graphic file (type png)
 <use ../res/eda2.png>
-Package luatex.def Info: ../res/eda2.png  used on input line 91.
-(luatex.def)             Requested size: 234.8775pt x 150.99403pt.
- [2]
-<../res/eda3.png, id=131, 702.625pt x 451.6875pt>
+Package luatex.def Info: ../res/eda2.png  used on input line 92.
+(luatex.def)             Requested size: 180.385pt x 115.96104pt.
+<../res/eda3.png, id=120, 702.625pt x 451.6875pt>
 File: ../res/eda3.png Graphic file (type png)
 <use ../res/eda3.png>
-Package luatex.def Info: ../res/eda3.png  used on input line 96.
-(luatex.def)             Requested size: 234.8775pt x 150.99403pt.
-<../res/eda5.png, id=132, 702.625pt x 451.6875pt>
+Package luatex.def Info: ../res/eda3.png  used on input line 97.
+(luatex.def)             Requested size: 180.385pt x 115.96104pt.
+<../res/eda5.png, id=121, 702.625pt x 451.6875pt>
 File: ../res/eda5.png Graphic file (type png)
 <use ../res/eda5.png>
-Package luatex.def Info: ../res/eda5.png  used on input line 101.
-(luatex.def)             Requested size: 234.8775pt x 150.99403pt.
-<../res/screenshot.png, id=133, 1438.6247pt x 1571.11969pt>
-File: ../res/screenshot.png Graphic file (type png)
-<use ../res/screenshot.png>
-Package luatex.def Info: ../res/screenshot.png  used on input line 106.
-(luatex.def)             Requested size: 234.8775pt x 256.4906pt.
- [3<../res/eda1.png><../res/eda2.png><../res/eda3.png>] [4<../res/eda5.png><../r
-es/screenshot.png>]
-(./flowchart.tex) [5] (../../analysis/yi/tex/NewYork_report.tex) [6]
-(./final_report.bbl) [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 229.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 229.
+Package luatex.def Info: ../res/eda5.png  used on input line 102.
+(luatex.def)             Requested size: 180.385pt x 115.96104pt.
+ [2]
+<../plot/byhour_sf.pdf, id=132, 412.81226pt x 343.02792pt>
+File: ../plot/byhour_sf.pdf Graphic file (type pdf)
+<use ../plot/byhour_sf.pdf>
+Package luatex.def Info: ../plot/byhour_sf.pdf  used on input line 113.
+(luatex.def)             Requested size: 112.74277pt x 93.6813pt.
+<../plot/byhour_ny.pdf, id=133, 412.81226pt x 343.02792pt>
+File: ../plot/byhour_ny.pdf Graphic file (type pdf)
+<use ../plot/byhour_ny.pdf>
+Package luatex.def Info: ../plot/byhour_ny.pdf  used on input line 118.
+(luatex.def)             Requested size: 112.74277pt x 93.6813pt.
+<../plot/byhour_all.pdf, id=134, 419.19548pt x 343.02792pt>
+File: ../plot/byhour_all.pdf Graphic file (type pdf)
+<use ../plot/byhour_all.pdf>
+Package luatex.def Info: ../plot/byhour_all.pdf  used on input line 123.
+(luatex.def)             Requested size: 112.74277pt x 92.25761pt.
+<../plot/corr_sf.pdf, id=135, 505.89pt x 505.89pt>
+File: ../plot/corr_sf.pdf Graphic file (type pdf)
+<use ../plot/corr_sf.pdf>
+Package luatex.def Info: ../plot/corr_sf.pdf  used on input line 133.
+(luatex.def)             Requested size: 112.74277pt x 112.73964pt.
+<../plot/corr_ny.pdf, id=136, 505.89pt x 505.89pt>
+File: ../plot/corr_ny.pdf Graphic file (type pdf)
+<use ../plot/corr_ny.pdf>
+Package luatex.def Info: ../plot/corr_ny.pdf  used on input line 138.
+(luatex.def)             Requested size: 112.74277pt x 112.73964pt.
+<../plot/corr_all.pdf, id=137, 505.89pt x 505.89pt>
+File: ../plot/corr_all.pdf Graphic file (type pdf)
+<use ../plot/corr_all.pdf>
+Package luatex.def Info: ../plot/corr_all.pdf  used on input line 143.
+(luatex.def)             Requested size: 112.74277pt x 112.73964pt.
+ [3<../res/eda1.png><../res/eda2.png><../res/eda3.png><../res/eda5.png><../plot/
+byhour_sf.pdf><../plot/byhour_ny.pdf><../plot/byhour_all.pdf><../plot/corr_sf.pd
+f><../plot/corr_ny.pdf><../plot/corr_all.pdf>] (./flowchart.tex) [4]
+(../../analysis/yi/tex/NewYork_report.tex) [5] [6] (./final_report.bbl)
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 296.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 296.
  (./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 229.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 229.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 296.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 296.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
 (rerunfilecheck)             Checksum: 05C8F82CA864B85AE25B10F9CAF86F34;1449.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 229.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 296.
 )
 
 Here is how much of LuaTeX's memory you used:
- 20194 strings out of 494291
+ 20426 strings out of 494291
  100000,552014 words of node,token memory allocated
- 404 words of node memory still in use:
-   2 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 48 glue_spec,
- 5 attribute_list, 2 write nodes
-   avail lists: 1:2,2:997,3:173,4:47,5:214,6:48,7:3193,8:25,9:289,10:14,11:269
- 23636 multiletter control sequences out of 65536+600000
- 45 fonts using 3353247 bytes
- 55i,12n,67p,423b,755s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></u
-sr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf><
-/usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></u
-sr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/sh
-are/texlive/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf></usr/share/te
+ 494 words of node memory still in use:
+   2 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 7 attribute, 62 glue_spec,
+ 7 attribute_list, 2 write, 2 pdf_action nodes
+   avail lists: 1:2,2:1105,3:181,4:39,5:260,6:42,7:4305,8:89,9:353,10:14,11:330
+ 23812 multiletter control sequences out of 65536+600000
+ 45 fonts using 3347647 bytes
+ 55i,12n,67p,423b,759s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></u
+sr/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/
+share/texlive/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></us
+r/share/texlive/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf></usr/s
+hare/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/sha
+re/texlive/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/te
 xlive/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texl
 ive/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb>
-Output written on final_report.pdf (7 pages, 2242081 bytes).
+Output written on final_report.pdf (7 pages, 175664 bytes).
 
-PDF statistics: 233 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 131072)
+PDF statistics: 372 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 131072)
  176 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -3,46 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: final_report.aux
 The style file: acm.bst
 Database file #1: references.bib
-Warning--empty journal in balanced-accuracy
-You've used 2 entries,
+You've used 5 entries,
             2253 wiz_defined-function locations,
-            538 strings with 4418 characters,
-and the built_in function-call counts, 1069 in all, are:
-= -- 88
-> -- 104
+            553 strings with 5049 characters,
+and the built_in function-call counts, 1942 in all, are:
+= -- 174
+> -- 140
 < -- 0
-+ -- 43
-- -- 40
-* -- 107
-:= -- 199
-add.period$ -- 5
-call.type$ -- 2
-change.case$ -- 26
++ -- 58
+- -- 52
+* -- 162
+:= -- 341
+add.period$ -- 17
+call.type$ -- 5
+change.case$ -- 41
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 17
-empty$ -- 43
-format.name$ -- 40
-if$ -- 191
+cite$ -- 5
+duplicate$ -- 43
+empty$ -- 124
+format.name$ -- 52
+if$ -- 377
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 12
-num.names$ -- 4
-pop$ -- 24
+int.to.str$ -- 5
+missing$ -- 3
+newline$ -- 30
+num.names$ -- 10
+pop$ -- 44
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 36
 quote$ -- 0
-skip$ -- 10
+skip$ -- 29
 stack$ -- 0
-substring$ -- 42
-swap$ -- 3
+substring$ -- 88
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
-warning$ -- 1
-while$ -- 6
-width$ -- 3
-write$ -- 19
-(There was 1 warning)
+type$ -- 20
+warning$ -- 0
+while$ -- 14
+width$ -- 6
+write$ -- 55

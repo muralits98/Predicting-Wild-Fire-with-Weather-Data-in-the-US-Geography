@@ -1,4 +1,5 @@
 import util
+import multiordinal
 
 import numpy
 import pandas
@@ -6,6 +7,8 @@ import sqlalchemy
 import sklearn
 import sklearn.preprocessing
 import sklearn.metrics
+import sklearn.cluster
+
 import matplotlib.pyplot
 
 template = '''
@@ -55,16 +58,15 @@ latex_template = '''
 '''
 engine = sqlalchemy.create_engine("sqlite:///../../../data/data.sqlite")
 connection = engine.connect()
-cities = pandas.read_sql_query("SELECT Name FROM Cities", connection)
-enc = sklearn.preprocessing.OneHotEncoder(sparse = False)
 
 import sys
 job = -1
-if (len(sys.argv) == 2):
-    try:
-        job = int(sys.argv[1])
-    except:
-        job = -1
+
+if len(sys.argv) < 2:
+    print("Error")
+    exit(1)
+
+cities = sys.argv[1:]
 
 colors = ["red", "green", "blue", "yellow", "magenta", "cyan", "orange",
           "purple", "indigo", "gold"]
@@ -77,13 +79,21 @@ ax2 = fig2.add_subplot(111)
 ax3 = fig3.add_subplot(111)
 ax4 = fig4.add_subplot(111)
 
+enc = sklearn.preprocessing.OneHotEncoder(sparse = False, categories = "auto")
+
 for i in range(len(cities)):
-    data = pandas.read_sql(template.format(cities.iloc[i, 0]),
+    data = pandas.read_sql(template.format(cities[i]),
                             connection)
-    one_hot = enc.fit_transform(numpy.array(data["WeatherDescription"])
-                                .reshape(-1, 1))
+    wd = numpy.array(data["WeatherDescription"])
+    many_hot = numpy.zeros(len(wd) * 54)
+    multiordinal.transform(wd, many_hot)
+    many_hot = many_hot.reshape(len(wd), 54)
     X = numpy.concatenate((numpy.array(data.iloc[:, [0, 1, 2, 4, 5]]),
-                            one_hot), axis = 1)
+                           many_hot), axis = 1)
+    clustering = sklearn.cluster.DBSCAN(n_jobs = job).fit(X)
+    clustering_one_hot = enc.fit_transform(clustering.labels_
+        .reshape(-1, 1))
+    X = numpy.concatenate((X, clustering_one_hot), axis = 1)
     y = numpy.array(data["Fire"])
     ind_1 = y == 1
     ind_0 = y == 0
@@ -132,11 +142,14 @@ for i in range(len(cities)):
             accs[k - 1] = acc
             precs[k - 1] = prec
             recs[k - 1] = rec
-            print(cities.iloc[i, 0], "RandomForestClassifierBS",
+            print(cities[i], "RandomForestClassifierBS",
                 j, k, acc, score)
             if (score > max_score_rf):
                 par_rf = (j, k)
                 max_score_rf = score
+                train_acc_rf = acc
+                train_prec_rf = prec
+                train_rec_rf = rec
         label = f"n_boost = {j}"
         ax1.plot(scores, color = colors[j - 1], label = label)
         ax2.plot(accs, color = colors[j - 1], label = label)
@@ -155,23 +168,23 @@ for i in range(len(cities)):
     ax4.set_xlabel("n_estimator")
     ax4.set_ylabel("recall")
     ax4.legend()
-    fig1.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+    fig1.suptitle(f"{cities[i]} RandomForestClassifierBS")
     fig1.savefig(
-        f"plot_part/{cities.iloc[i, 0]}RandomForestClassifierBS_1.pdf")
-    fig2.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+        f"plot_part/{cities[i]}RandomForestClassifierBS_1.pdf")
+    fig2.suptitle(f"{cities[i]} RandomForestClassifierBS")
     fig2.savefig(
-        f"plot_part/{cities.iloc[i, 0]}RandomForestClassifierBS_2.pdf")
-    fig3.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+        f"plot_part/{cities[i]}RandomForestClassifierBS_2.pdf")
+    fig3.suptitle(f"{cities[i]} RandomForestClassifierBS")
     fig3.savefig(
-        f"plot_part/{cities.iloc[i, 0]}RandomForestClassifierBS_3.pdf")
-    fig4.suptitle(f"{cities.iloc[i, 0]} RandomForestClassifierBS")
+        f"plot_part/{cities[i]}RandomForestClassifierBS_3.pdf")
+    fig4.suptitle(f"{cities[i]} RandomForestClassifierBS")
     fig4.savefig(
-        f"plot_part/{cities.iloc[i, 0]}RandomForestClassifierBS_4.pdf")
+        f"plot_part/{cities[i]}RandomForestClassifierBS_4.pdf")
     ax1.clear()
     ax2.clear()
     ax3.clear()
     ax4.clear()
-    
+
     clf = util.RandomForestClassifierBS(n_boost = par_rf[0],
         n_estimators = par_rf[1])
     clf.fit(X_sel, y_sel)
@@ -181,7 +194,7 @@ for i in range(len(cities)):
     test_prec_rf = sklearn.metrics.precision_score(y_hat, y_hof)
     test_rec_rf = sklearn.metrics.recall_score(y_hat, y_hof)
     print(
-        f"{cities.iloc[i, 0]} RandomForestClassifierBS {j} {k} {test_score_rf}")
+        f"{cities[i]} RandomForestClassifierBS {j} {k} {test_score_rf}")
     max_score_xgb = 0
     train_acc_xgb = 0
     train_prec_xgb = 0
@@ -208,7 +221,7 @@ for i in range(len(cities)):
             accs[k - 1] = acc
             precs[k - 1] = prec
             recs[k - 1] = rec
-            print(cities.iloc[i, 0], "XGBClassifierBS",
+            print(cities[i], "XGBClassifierBS",
                 j, k, score)
             if (score > max_score_xgb):
                 par_xgb = (j, k)
@@ -234,18 +247,18 @@ for i in range(len(cities)):
     ax4.set_xlabel("n_estimator")
     ax4.set_ylabel("recall")
     ax4.legend()
-    fig1.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+    fig1.suptitle(f"{cities[i]} XGBClassifierBS")
     fig1.savefig(
-        f"plot_part/{cities.iloc[i, 0]}XGBClassifierBS_1.pdf")
-    fig2.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+        f"plot_part/{cities[i]}XGBClassifierBS_1.pdf")
+    fig2.suptitle(f"{cities[i]} XGBClassifierBS")
     fig2.savefig(
-        f"plot_part/{cities.iloc[i, 0]}XGBClassifierBS_2.pdf")
-    fig3.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+        f"plot_part/{cities[i]}XGBClassifierBS_2.pdf")
+    fig3.suptitle(f"{cities[i]} XGBClassifierBS")
     fig3.savefig(
-        f"plot_part/{cities.iloc[i, 0]}XGBClassifierBS_3.pdf")
-    fig4.suptitle(f"{cities.iloc[i, 0]} XGBClassifierBS")
+        f"plot_part/{cities[i]}XGBClassifierBS_3.pdf")
+    fig4.suptitle(f"{cities[i]} XGBClassifierBS")
     fig4.savefig(
-        f"plot_part/{cities.iloc[i, 0]}XGBClassifierBS_4.pdf")
+        f"plot_part/{cities[i]}XGBClassifierBS_4.pdf")
     ax1.clear()
     ax2.clear()
     ax3.clear()
@@ -259,9 +272,9 @@ for i in range(len(cities)):
     test_acc_xgb = sklearn.metrics.accuracy_score(y_hat, y_hof)
     test_prec_xgb = sklearn.metrics.precision_score(y_hat, y_hof)
     test_rec_xgb = sklearn.metrics.recall_score(y_hat, y_hof)
-    print(f"{cities.iloc[i, 0]} XGBClassifierBS {j} {k} {test_score_xgb}")
-    with open(f"tex_part/{cities.iloc[i, 0]}.tex", "w") as fout:
-        fout.write(latex_template.format(cities.iloc[i, 0],
+    print(f"{cities[i]} XGBClassifierBS {j} {k} {test_score_xgb}")
+    with open(f"tex_part/{cities[i]}.tex", "w") as fout:
+        fout.write(latex_template.format(cities[i],
             par_xgb[0], par_xgb[1], train_acc_xgb, max_score_xgb,
             train_prec_xgb, train_rec_xgb, 
             test_acc_xgb, test_score_xgb,
