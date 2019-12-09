@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{balanced-accuracy}
+{\scshape Brodersen, K.~H., Ong, C.~S., Stephan, K.~E., and Buhmann, J.~M.}
+\newblock The balanced accuracy and its posterior distribution.
+
+\bibitem{scikit-learn}
+{\scshape Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B.,
+  Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V.,
+  Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and
+  Duchesnay, E.}
+\newblock Scikit-learn: Machine learning in python.
+\newblock {\em Journal of Machine Learning Research 12\/} (2011), 2825--2830.
+
+\end{thebibliography}

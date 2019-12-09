@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: final_report.aux
+The style file: acm.bst
+Database file #1: references.bib
+Warning--empty journal in balanced-accuracy
+You've used 2 entries,
+            2253 wiz_defined-function locations,
+            538 strings with 4418 characters,
+and the built_in function-call counts, 1069 in all, are:
+= -- 88
+> -- 104
+< -- 0
++ -- 43
+- -- 40
+* -- 107
+:= -- 199
+add.period$ -- 5
+call.type$ -- 2
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 17
+empty$ -- 43
+format.name$ -- 40
+if$ -- 191
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 12
+num.names$ -- 4
+pop$ -- 24
+preamble$ -- 1
+purify$ -- 24
+quote$ -- 0
+skip$ -- 10
+stack$ -- 0
+substring$ -- 42
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 6
+width$ -- 3
+write$ -- 19
+(There was 1 warning)

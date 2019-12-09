@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.11.25)  4 DEC 2019 20:53
+This is LuaTeX, Version 1.10.0 (TeX Live 2019)  (format=lualatex 2019.11.25)  8 DEC 2019 19:15
  system commands enabled.
 **flowchart.tex
 (./flowchart.tex
@@ -48,7 +48,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.084 seconds
+luaotfload | main : initialization completed in 0.074 seconds
 ! Undefined control sequence.
 l.1 \tikzstyle
             {block} = [rectangle, draw]
