@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Arch Linux)  (format=lualatex 2019.11.15)  10 DEC 2019 18:22
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Arch Linux)  (format=lualatex 2019.11.15)  10 DEC 2019 18:44
  system commands enabled.
 **final_report.tex
 (./final_report.tex
@@ -55,7 +55,7 @@ Lua module: luaotfload-multiscript 2019-09-13 3.00 luaotfload submodule / multis
 cript
 Inserting `luaotfload.rewrite_fontname' at position 5 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.098 seconds
+luaotfload | main : initialization completed in 0.100 seconds
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size10.clo
@@ -796,146 +796,131 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<../res/eda1.png, id=124, 702.625pt x 451.6875pt>
+<../res/eda1.png, id=129, 702.625pt x 451.6875pt>
 File: ../res/eda1.png Graphic file (type png)
 <use ../res/eda1.png>
 Package luatex.def Info: ../res/eda1.png  used on input line 91.
 (luatex.def)             Requested size: 180.385pt x 115.96104pt.
-<../res/eda2.png, id=125, 702.625pt x 451.6875pt>
+<../res/eda2.png, id=130, 702.625pt x 451.6875pt>
 File: ../res/eda2.png Graphic file (type png)
 <use ../res/eda2.png>
 Package luatex.def Info: ../res/eda2.png  used on input line 96.
 (luatex.def)             Requested size: 180.385pt x 115.96104pt.
-<../res/eda3.png, id=126, 702.625pt x 451.6875pt>
+<../res/eda3.png, id=131, 702.625pt x 451.6875pt>
 File: ../res/eda3.png Graphic file (type png)
 <use ../res/eda3.png>
 Package luatex.def Info: ../res/eda3.png  used on input line 101.
 (luatex.def)             Requested size: 180.385pt x 115.96104pt.
-<../res/eda5.png, id=127, 702.625pt x 451.6875pt>
+<../res/eda5.png, id=132, 702.625pt x 451.6875pt>
 File: ../res/eda5.png Graphic file (type png)
 <use ../res/eda5.png>
 Package luatex.def Info: ../res/eda5.png  used on input line 106.
 (luatex.def)             Requested size: 180.385pt x 115.96104pt.
  [2]
-<../plot/byhour_sf.pdf, id=140, 412.81226pt x 343.02792pt>
+<../plot/byhour_sf.pdf, id=145, 412.81226pt x 343.02792pt>
 File: ../plot/byhour_sf.pdf Graphic file (type pdf)
 <use ../plot/byhour_sf.pdf>
 Package luatex.def Info: ../plot/byhour_sf.pdf  used on input line 117.
 (luatex.def)             Requested size: 112.74277pt x 93.6813pt.
-<../plot/byhour_ny.pdf, id=141, 412.81226pt x 343.02792pt>
+<../plot/byhour_ny.pdf, id=146, 412.81226pt x 343.02792pt>
 File: ../plot/byhour_ny.pdf Graphic file (type pdf)
 <use ../plot/byhour_ny.pdf>
 Package luatex.def Info: ../plot/byhour_ny.pdf  used on input line 122.
 (luatex.def)             Requested size: 112.74277pt x 93.6813pt.
-<../plot/byhour_all.pdf, id=142, 419.19548pt x 343.02792pt>
+<../plot/byhour_all.pdf, id=147, 419.19548pt x 343.02792pt>
 File: ../plot/byhour_all.pdf Graphic file (type pdf)
 <use ../plot/byhour_all.pdf>
 Package luatex.def Info: ../plot/byhour_all.pdf  used on input line 127.
 (luatex.def)             Requested size: 112.74277pt x 92.25761pt.
-<../plot/corr_sf.pdf, id=143, 505.89pt x 505.89pt>
+<../plot/corr_sf.pdf, id=148, 505.89pt x 505.89pt>
 File: ../plot/corr_sf.pdf Graphic file (type pdf)
 <use ../plot/corr_sf.pdf>
 Package luatex.def Info: ../plot/corr_sf.pdf  used on input line 137.
 (luatex.def)             Requested size: 112.74277pt x 112.73964pt.
-<../plot/corr_ny.pdf, id=144, 505.89pt x 505.89pt>
+<../plot/corr_ny.pdf, id=149, 505.89pt x 505.89pt>
 File: ../plot/corr_ny.pdf Graphic file (type pdf)
 <use ../plot/corr_ny.pdf>
 Package luatex.def Info: ../plot/corr_ny.pdf  used on input line 142.
 (luatex.def)             Requested size: 112.74277pt x 112.73964pt.
-<../plot/corr_all.pdf, id=145, 505.89pt x 505.89pt>
+<../plot/corr_all.pdf, id=150, 505.89pt x 505.89pt>
 File: ../plot/corr_all.pdf Graphic file (type pdf)
 <use ../plot/corr_all.pdf>
 Package luatex.def Info: ../plot/corr_all.pdf  used on input line 147.
 (luatex.def)             Requested size: 112.74277pt x 112.73964pt.
  [3<../res/eda1.png><../res/eda2.png><../res/eda3.png><../res/eda5.png><../plot/
 byhour_sf.pdf><../plot/byhour_ny.pdf><../plot/byhour_all.pdf><../plot/corr_sf.pd
-f><../plot/corr_ny.pdf><../plot/corr_all.pdf>] [4] (./flowchart.tex)
-<../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_1.pdf, id=28
-3, 462.528pt x 346.896pt>
+f><../plot/corr_ny.pdf><../plot/corr_all.pdf>] [4] (./flowchart.tex) [5]
+<../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_1.pdf, id=29
+4, 462.528pt x 346.896pt>
 File: ../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_1.pdf G
 raphic file (type pdf)
 <use ../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_1.pdf>
 Package luatex.def Info: ../../analysis/yi/plot_zero_part/AlbuquerqueRandomFores
-tClassifier_1.pdf  used on input line 261.
+tClassifier_1.pdf  used on input line 268.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
-<../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_4.pdf, id=28
-4, 462.528pt x 346.896pt>
+<../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_4.pdf, id=29
+5, 462.528pt x 346.896pt>
 File: ../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_4.pdf G
 raphic file (type pdf)
 <use ../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_4.pdf>
 Package luatex.def Info: ../../analysis/yi/plot_zero_part/AlbuquerqueRandomFores
-tClassifier_4.pdf  used on input line 261.
+tClassifier_4.pdf  used on input line 268.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
- [5]
-<../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_1.pdf, id=291, 462.528
+<../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_1.pdf, id=296, 462.528
 pt x 346.896pt>
 File: ../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_1.pdf Graphic fil
 e (type pdf)
 <use ../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_1.pdf>
 Package luatex.def Info: ../../analysis/yi/plot/AlbuquerqueRandomForestClassifie
-r_1.pdf  used on input line 279.
+r_1.pdf  used on input line 286.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
-<../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_4.pdf, id=292, 462.528
+<../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_4.pdf, id=297, 462.528
 pt x 346.896pt>
 File: ../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_4.pdf Graphic fil
 e (type pdf)
 <use ../../analysis/yi/plot/AlbuquerqueRandomForestClassifier_4.pdf>
 Package luatex.def Info: ../../analysis/yi/plot/AlbuquerqueRandomForestClassifie
-r_4.pdf  used on input line 279.
+r_4.pdf  used on input line 286.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
  [6<../../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_1.pdf><..
 /../analysis/yi/plot_zero_part/AlbuquerqueRandomForestClassifier_4.pdf><../../an
 alysis/yi/plot/AlbuquerqueRandomForestClassifier_1.pdf><../../analysis/yi/plot/A
 lbuquerqueRandomForestClassifier_4.pdf>]
 <../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_1.pdf
-, id=459, 462.528pt x 346.896pt>
+, id=463, 462.528pt x 346.896pt>
 File: ../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_
 1.pdf Graphic file (type pdf)
 <use ../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_1
 .pdf>
 Package luatex.def Info: ../../analysis/yi/classify_boost/plot/AlbuquerqueRandom
-ForestClassifierBS_1.pdf  used on input line 344.
+ForestClassifierBS_1.pdf  used on input line 353.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
 <../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_4.pdf
-, id=460, 462.528pt x 346.896pt>
+, id=464, 462.528pt x 346.896pt>
 File: ../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_
 4.pdf Graphic file (type pdf)
 <use ../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_4
 .pdf>
 Package luatex.def Info: ../../analysis/yi/classify_boost/plot/AlbuquerqueRandom
-ForestClassifierBS_4.pdf  used on input line 344.
+ForestClassifierBS_4.pdf  used on input line 353.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
 <../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestClass
-ifierBS_1.pdf, id=461, 462.528pt x 346.896pt>
+ifierBS_1.pdf, id=465, 462.528pt x 346.896pt>
 File: ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForest
 ClassifierBS_1.pdf Graphic file (type pdf)
 <use ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
 lassifierBS_1.pdf>
 Package luatex.def Info: ../../analysis/yi/classify_boost_multiordinal/plot/Albu
-querqueRandomForestClassifierBS_1.pdf  used on input line 361.
+querqueRandomForestClassifierBS_1.pdf  used on input line 370.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
 <../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestClass
-ifierBS_4.pdf, id=462, 462.528pt x 346.896pt>
+ifierBS_4.pdf, id=466, 462.528pt x 346.896pt>
 File: ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForest
 ClassifierBS_4.pdf Graphic file (type pdf)
 <use ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
 lassifierBS_4.pdf>
 Package luatex.def Info: ../../analysis/yi/classify_boost_multiordinal/plot/Albu
-querqueRandomForestClassifierBS_4.pdf  used on input line 361.
-(luatex.def)             Requested size: 169.1113pt x 126.83565pt.
-File: ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForest
-ClassifierBS_1.pdf Graphic file (type pdf)
-<use ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
-lassifierBS_1.pdf>
-Package luatex.def Info: ../../analysis/yi/classify_boost_multiordinal/plot/Albu
-querqueRandomForestClassifierBS_1.pdf  used on input line 376.
-(luatex.def)             Requested size: 169.1113pt x 126.83565pt.
-File: ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForest
-ClassifierBS_4.pdf Graphic file (type pdf)
-<use ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
-lassifierBS_4.pdf>
-Package luatex.def Info: ../../analysis/yi/classify_boost_multiordinal/plot/Albu
-querqueRandomForestClassifierBS_4.pdf  used on input line 376.
+querqueRandomForestClassifierBS_4.pdf  used on input line 370.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
 
 [7<../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_1.p
@@ -943,43 +928,57 @@ df><../../analysis/yi/classify_boost/plot/AlbuquerqueRandomForestClassifierBS_4.
 pdf><../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
 lassifierBS_1.pdf><../../analysis/yi/classify_boost_multiordinal/plot/Albuquerqu
 eRandomForestClassifierBS_4.pdf>]
-<../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_1.pdf, id=653, 462
+File: ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForest
+ClassifierBS_1.pdf Graphic file (type pdf)
+<use ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
+lassifierBS_1.pdf>
+Package luatex.def Info: ../../analysis/yi/classify_boost_multiordinal/plot/Albu
+querqueRandomForestClassifierBS_1.pdf  used on input line 385.
+(luatex.def)             Requested size: 169.1113pt x 126.83565pt.
+File: ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForest
+ClassifierBS_4.pdf Graphic file (type pdf)
+<use ../../analysis/yi/classify_boost_multiordinal/plot/AlbuquerqueRandomForestC
+lassifierBS_4.pdf>
+Package luatex.def Info: ../../analysis/yi/classify_boost_multiordinal/plot/Albu
+querqueRandomForestClassifierBS_4.pdf  used on input line 385.
+(luatex.def)             Requested size: 169.1113pt x 126.83565pt.
+<../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_1.pdf, id=657, 462
 .528pt x 346.896pt>
 File: ../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_1.pdf Graphic
  file (type pdf)
 <use ../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_1.pdf>
 Package luatex.def Info: ../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClass
-ifier_1.pdf  used on input line 395.
+ifier_1.pdf  used on input line 404.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
-<../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_4.pdf, id=654, 462
+<../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_4.pdf, id=658, 462
 .528pt x 346.896pt>
 File: ../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_4.pdf Graphic
  file (type pdf)
 <use ../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_4.pdf>
 Package luatex.def Info: ../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClass
-ifier_4.pdf  used on input line 395.
+ifier_4.pdf  used on input line 404.
 (luatex.def)             Requested size: 169.1113pt x 126.83565pt.
  [8<../../analysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_1.pdf><../../an
-alysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_4.pdf>] (./final_report.bb
-l) [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 437.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 437.
+alysis/yi/classify_xds/plot/AlbuquerqueXDSClassifier_4.pdf>] [9] (./final_repor
+t.bbl) [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 446.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 446.
  (./final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 437.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 437.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 446.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 446.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: 8F5B4EE8A5DE51E8D1317CBEDB38ACDF;3720.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 437.
+(rerunfilecheck)             Checksum: 99859C183FDE8E8A68CCD264C84A5262;3813.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 446.
 )
 
 Here is how much of LuaTeX's memory you used:
- 24097 strings out of 493864
+ 24100 strings out of 493864
  100000,552014 words of node,token memory allocated
  494 words of node memory still in use:
    2 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 7 attribute, 62 glue_spec,
  7 attribute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:1,2:1199,3:169,4:41,5:213,6:44,7:3747,8:89,9:444,10:14,11:271
- 27824 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:1163,3:165,4:43,5:213,6:46,7:3747,8:89,9:423,10:14,11:278
+ 27825 multiletter control sequences out of 65536+600000
  45 fonts using 3347647 bytes
  58i,12n,67p,441b,761s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share
@@ -993,10 +992,10 @@ lar.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr
 st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy7.pfb>
-Output written on final_report.pdf (9 pages, 320471 bytes).
+Output written on final_report.pdf (10 pages, 321466 bytes).
 
-PDF statistics: 822 PDF objects out of 1000 (max. 8388607)
- 343 compressed objects within 4 object streams
- 52 named destinations out of 1000 (max. 131072)
- 184 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 831 PDF objects out of 1000 (max. 8388607)
+ 351 compressed objects within 4 object streams
+ 54 named destinations out of 1000 (max. 131072)
+ 192 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -203,19 +203,26 @@ Averaging predicted values from estimators trained on balanced random
 subsets of data. For example, if we have a data set with 10 positive
 samples and 100 negative samples, we train the estimators on multiple
 balanced random sub-samples of the dataset, each containing all the 
-positive samples.\par
+positive samples. The n\_boost parameter determines the number of such
+subsets.\par
 \subsection{Balanced Accuracy}
 The balanced accuracy in binary and multiclass classification problems to
 deal with imbalanced datasets. It is defined as the average of recall
-obtained on each class.
-
+obtained on each class.\par
+\subsection{Metrics}
+The training metrics are 20-fold cross-validation metrics while test
+metrics are metrics on a separate balanced test data set that no estimator
+is trained on.\par
 \section{Model Building and Accuracy Tuning}
 \begin{figure}[H]
     \centering
     \input{flowchart.tex}
     \caption{Flowchart of Experiments}
 \end{figure}
+
 \subsection{Preliminary Analysis}
+All metrics shown in the following table are specifically for Albuquerque.
+\par
 \begin{table}[H]
     \caption{Training and Testing Metrics}
     \centering
@@ -247,9 +254,9 @@ obtained on each class.
 \end{table}
 \subsubsection{Experiment 0 - Primitive Model Fitting}
 First, we fit XGBoost, Random Forest and SVM by using the entire dataset
-and found the accuracy to be quite low. The low accuracy could be because
-of the model overfitting. There are, afterall, 1M negative samples and
-roughly 25k positive samples.\par
+for each city and found the accuracy to be quite low. The low accuracy
+could be because of the model overfitting. There are, overall,
+1M negative samples and roughly 25k positive samples.\par
 \begin{figure}[H]
     \centering
     \foreach \i in {1,4} {%
@@ -279,6 +286,8 @@ SVM models.\par
     }
 \end{figure}
 \subsection{Accurarcy Tuning}
+All metrics shown in the following table are specifically for Albuquerque.
+\par
 \begin{table}[H]
     \caption{Training and Testing Metrics}
     \centering
