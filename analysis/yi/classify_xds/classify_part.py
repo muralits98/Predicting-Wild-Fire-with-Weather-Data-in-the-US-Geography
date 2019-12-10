@@ -172,8 +172,8 @@ for i in range(len(cities)):
     ax2.clear()
     ax3.clear()
     ax4.clear()
-    clf = util.EnsembleClassifier(n_ensemble = par,
-                                  n_components = 10)
+    clf = util.XDSClassifier(n_ensemble = par,
+                             n_components = 10)
     clf.fit(X_sel, y_sel)
     y_hat = clf.predict(X_hof)
     test_score = sklearn.metrics.balanced_accuracy_score(y_hat, y_hof)

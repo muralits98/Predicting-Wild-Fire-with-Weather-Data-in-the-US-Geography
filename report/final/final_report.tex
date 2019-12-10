@@ -7,6 +7,7 @@
 \usepackage{float}
 \usepackage{subcaption}
 \usepackage{sidecap}
+\usepackage{pgffor}
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows}
 
@@ -44,6 +45,9 @@ weather. Climate change is not only making the fire season longer but on
 average much more intense. The idea is to use the model to predict these
 fires in advance, thereby reducing such incidents.\par
 \section{EDA}
+
+We have created a website to help visualize our dataset.\par 
+\url{https://leafyao8621.github.io/firevisualization.github.io/}
 \subsection{Covariates}
 To build our final dataset, we wrote a python script to get the
 geographical coordinate (latitude and longitude) of all cities and built
@@ -57,8 +61,8 @@ The features that we have in our final dataset are:
     \begin{tabular}{l|l|l}
         Covariate &Type &Description\\\hline
         Humidity &Real &Humidity at a given hour\\
-        Pressure &Real &Air Pressure at a given hour\\
-        Temperature &Real &Air temperature at a given hour\\
+        Pressure &Real &Atmospheric Pressure at a given hour\\
+        Temperature &Real &Atmospheric temperature at a given hour\\
         Weather Description &Categorical &Description of weather at
         a given time, e.g. ``sky is ckear''\\
         WindDirection &Real &Wind direction in degrees at a given time,
@@ -146,6 +150,8 @@ figures help illustrate what the final dataset looks like:\par
     \caption{Correlation Plot}
 \end{figure}
 
+\newpage
+
 From Figure 1, we observed that we have
 significantly fewer positive samples (data points where the fire indicator
 has value 1) than negative samples (data points where the fire indicator
@@ -192,6 +198,12 @@ only contains conditional control statements.\par
 DBSCAN - Density-Based Spatial Clustering of Applications with Noise.
 DBScan finds core samples of high density and expands clusters from them.
 It is good for data which contains clusters of similar density.
+\subsection{Boosting}
+Averaging predicted values from estimators trained on balanced random
+subsets of data. For example, if we have a data set with 10 positive
+samples and 100 negative samples, we train the estimators on multiple
+balanced random sub-samples of the dataset, each containing all the 
+positive samples.\par
 \subsection{Balanced Accuracy}
 The balanced accuracy in binary and multiclass classification problems to
 deal with imbalanced datasets. It is defined as the average of recall
@@ -204,11 +216,50 @@ obtained on each class.
     \caption{Flowchart of Experiments}
 \end{figure}
 \subsection{Preliminary Analysis}
+\begin{table}[H]
+    \caption{Training and Testing Metrics}
+    \centering
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
+        \hline
+        Experiment &Classifier &\multicolumn{2}{|r|}{Meta Parameter}
+        &Training
+        &Test\\
+        \hline
+        \hline
+        0 & &\multicolumn{2}{|r|}{n\_estimator}
+        &bal\_acc
+        &bal\_acc\\
+        \hline
+        &XGBClassifier &\multicolumn{2}{|r|}{96} &0.5000 &0.5000\\
+        \hline
+        &RandomForestClassifier &\multicolumn{2}{|r|}{41} &0.5307 &0.6196\\
+        \hline
+        \hline
+        1 & &\multicolumn{2}{|r|}{n\_estimator}
+        &bal\_acc
+        &bal\_acc\\
+        \hline
+        &XGBClassifier &\multicolumn{2}{|r|}{96} &0.6766 &0.6790\\
+        \hline
+        &RandomForestClassifier &\multicolumn{2}{|r|}{41} &0.6632 &0.7089\\
+        \hline
+    \end{tabular}
+\end{table}
 \subsubsection{Experiment 0 - Primitive Model Fitting}
 First, we fit XGBoost, Random Forest and SVM by using the entire dataset
 and found the accuracy to be quite low. The low accuracy could be because
 of the model overfitting. There are, afterall, 1M negative samples and
 roughly 25k positive samples.\par
+\begin{figure}[H]
+    \centering
+    \foreach \i in {1,4} {%
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]
+            {../../analysis/yi/plot_zero_part/SanFranciscoRandomForestClassifier_\i.pdf}
+        \end{subfigure}
+    }
+\end{figure}
 \subsubsection{Experiment 1 - Under-sampling}
 Recognizing the unbalanced nature of our dataset, we created a balanced
 training data set by combining all the positive samples with a random
@@ -217,11 +268,64 @@ we fit XGBoost, Random Forest and SVM with RBF kernel. We observed a
 significant improvement in test accuracy in the XGBoost and Random Forest
 models; however, we have not observed any significant improvement in the
 SVM models.\par
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \input{../../analysis/yi/tex/NewYork_report.tex}
-\end{table}
+    \foreach \i in {1,4} {%
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]
+            {../../analysis/yi/plot/SanFranciscoRandomForestClassifier_\i.pdf}
+        \end{subfigure}
+    }
+\end{figure}
 \subsection{Accurarcy Tuning}
+\begin{table}[H]
+    \caption{Training and Testing Metrics}
+    \centering
+    \begin{tabular}{|r|r|r|r|r|r|r|r|r|}
+        \hline
+        Experiment &Classifier &\multicolumn{2}{|r|}{Meta Parameter}
+        &Training
+        &Test\\
+        \hline
+        \hline
+        2 & &n\_boost &n\_estimator
+        &bal\_acc
+        &bal\_acc\\
+        \hline
+        &XGBClassifierBS &2 &96 &0.6766 &0.6790\\
+        \hline
+        &RandomForestClassifierBS &2 &41 &0.6632 &0.7089\\
+        \hline
+        \hline
+        3 & &n\_boost &n\_estimator
+        &bal\_acc
+        &bal\_acc\\
+        \hline
+        &XGBClassifierBS &2 &96 &0.6766 &0.6790\\
+        \hline
+        &RandomForestClassifierBS &2 &41 &0.6632 &0.7089\\
+        \hline
+        \hline
+        4 & &n\_boost &n\_estimator
+        &bal\_acc
+        &bal\_acc\\
+        \hline
+        &XGBClassifierBS &2 &96 &0.6766 &0.6790\\
+        \hline
+        &RandomForestClassifierBS &2 &41 &0.6632 &0.7089\\
+        \hline
+        \hline
+        5 & &\multicolumn{2}{|r|}{n\_ensemble}
+        &bal\_acc
+        &bal\_acc\\
+        \hline
+        &EnsembleClassifier &\multicolumn{2}{|r|}{96} &0.6857 &0.6766\\
+        \hline
+        &XDSClassifier &\multicolumn{2}{|r|}{96} &0.6843 &0.6925\\
+        \hline
+    \end{tabular}
+\end{table}
 \subsubsection{Experiment 2 - Boosting Models Fitted with Balanced
                Sub-samples}
 Having the possibility of underfitting due to under-sampling in mind, we
@@ -229,28 +333,68 @@ have experimented with boosting to increase accuracy. By keeping all the
 positive samples and randomly resampling negative samples equal to the
 number of positive samples, we have kept the balance of the training data
 set while making better use of the data set we have available.\par
+\begin{figure}[H]
+    \centering
+    \foreach \i in {1,4} {%
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]
+            {../../analysis/yi/classify_boost/plot_part/SanFranciscoRandomForestClassifierBS_\i.pdf}
+        \end{subfigure}
+    }
+\end{figure}
 \subsubsection{Experiment 3 - Clusters of Many-hot Encoding}
 Having observed some order in the covariate ``Weather Description'', we
 have experimented with many-hot encoding for ordinal variables. Since an
-overall could not be established by the team, we have turned to many-hot
+overall order could not be established, we have turned to many-hot
 encoding on 3 clusters of levels and one-hot encoding on the remaining
 levels. As for models, we continued to use the boosted algorithms in the
 previous experiment.\par
+\begin{figure}[H]
+    \centering
+    \foreach \i in {1,4} {%
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]
+            {../../analysis/yi/classify_boost_multiordinal/plot_part/SanFranciscoRandomForestClassifierBS_\i.pdf}
+        \end{subfigure}
+    }
+\end{figure}
 \subsubsection{Experiment 4 - DBScan Clustering as Feature}
 We have also experimented adding one-hot encoded output of an unsupervised
 clustering algorithm, DBScan as covariates to the dataset to be fitted with
-supervised models.\par
+supervised models. As for models, we continued to use the boosted
+algorithms in the previous experiment.\par
+\begin{figure}[H]
+    \centering
+    \foreach \i in {1,4} {%
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]
+            {../../analysis/yi/classify_boost_multiordinal/plot_part/SanFranciscoRandomForestClassifierBS_\i.pdf}
+        \end{subfigure}
+    }
+\end{figure}
 \subsubsection{Experiment 5 - Stacked Ensemble}
 In this experiment, we explore feature engineering through the addition of
 two features, one which is to use the weather types as oridinal features
 and another one by grouping them using DBScan Algorithm and using their
-groups as features. We utilize the power of ensemble learning where we
-combine various weak learners in order to make better predictions. The
-algorithms that we picked are SVMs with RBF Kernel, Decision trees and
-XGBoost.
-These were identified to perform poorly with the original dataset fed as a
-whole. Here is what we found.
-\par
+groups as features. We tried to utilize the power of ensemble learning
+where we combine various weak learners in order to make better
+predictions. The algorithms that we picked are SVMs with RBF Kernel,
+Decision trees and XGBoost. These were identified to perform poorly with
+the original dataset fed as a whole.\par
+\begin{figure}[H]
+    \centering
+    \foreach \i in {1,4} {%
+        \begin{subfigure}[t]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.8\textwidth]
+            {../../analysis/yi/classify_xds/plot_part/SanFranciscoXDSClassifier_\i.pdf}
+        \end{subfigure}
+    }
+\end{figure}
+
 
 \section{Conclusion}
 Overall, our objective was to be able to predict fires given weather data.
@@ -274,10 +418,6 @@ follows:\par
     needed more real features that inherently affect the prediction. That
     may be the error that we seem not able to avoid.
     \item[$\ast$]
-    And to address the elephant in the room, Could we predict the recent
-    fires in California?
-    \textbf{Answer}
-    \item[$\ast$]
     Incorrectly predicting that a city will not have an occurence of
     fire may lead to unpreparedness on the part of the fire services
     which will further cause data points to pop up as ``fire'' until our
@@ -290,6 +430,7 @@ follows:\par
     automated parameter selection, we are willing to use it in production
     given that the company continues to use the same data sources.
 \end{enumerate}
+\newpage
 \nocite{*}
 \bibliographystyle{acm}
 \bibliography{references}
